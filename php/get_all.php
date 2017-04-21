@@ -1,4 +1,15 @@
-<?php header('Access-Control-Allow-Origin: *'); ?>
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if ($_SERVER['HTTP_ORIGIN'] == 'http://hticssu.com'){
+        header('Access-Control-Allow-Origin: http://hticssu.com');
+        header('Content-type: application/xml');
+        header('Access-Control-Allow-Credentials: true');
+        }
+}else {
+    echo 'This Api Support Get Method Only' ;
+}
+?>
+
 <?php
 
 define('DB_SERVER', 'server180');
@@ -9,6 +20,8 @@ define('DB_DATABASE', 'media_htics');
 define('PDO_DSN', 'mysql:host=' . DB_SERVER . ';dbname=' . DB_DATABASE . ';charset=' . DB_CHARSET);
 
 $db = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"));
+
+
 function check_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -17,9 +30,7 @@ function check_input($data) {
     return $data;
   }
 
-
-if($db){
-    if (isset($_GET['type'])){
+if (isset($_GET['type'])){
     if (empty($_GET['type'])){
         echo 'there are Erorr happen , 404';
     }
@@ -27,7 +38,7 @@ if($db){
         $type = check_input($_GET['type']);
     }
 }
-    if (isset ($_GET['select'])){
+if (isset ($_GET['select'])){
     if(empty ($_GET['select'])){
         echo "there Are Erorr Happen , 404" ;
     }
@@ -35,8 +46,8 @@ if($db){
         $select = check_input($_GET['select']);
     }
 }
-    
-    function dynamic_respond($content_type , $id_val){
+
+function dynamic_respond($content_type , $id_val){
     
     
     if ($content_type == 'slider'){
@@ -82,7 +93,10 @@ if($db){
     }
     
     else if ($content_type == 'new'){
-        $result = $GLOBALS['db']->prepare("SELECT *  FROM news");
+        if ($id_val == 'all'){
+            $result = $GLOBALS['db']->prepare("SELECT *  FROM news");
+        }
+        else if
         $result->execute();
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){ $rows[]=$row;}
@@ -115,6 +129,14 @@ if($db){
         echo json_encode($rows);
     }
     
+    else if ($content_type == 'comment'){
+        $result = $GLOBALS['db']->prepare("SELECT *  FROM feedback");
+        $result->execute();
+
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)){ $rows[]=$row;}
+        echo json_encode($rows); 
+    }
+    
     else if ($content_type == 'hti_material'){
         $result = $GLOBALS['db']->prepare("SELECT *  FROM hti_material");
         $result->execute();
@@ -122,20 +144,15 @@ if($db){
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){ $rows[]=$row;}
         echo json_encode($rows);    
     }
-        
+    
     else {
         echo  '404' ;
     }
    
     
 }
-    dynamic_respond($type , $select);
 
-}else {
-    echo "unable To Connecting With Hti-cs servers";
-}
-
-
+dynamic_respond($type , $select);
 
     
 
