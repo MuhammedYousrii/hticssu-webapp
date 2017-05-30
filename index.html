@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The Official WebSite For Cs-Hti Student-Union">
+        <meta name="keywords" content='Hti,Student,Union,ComputerScience,Courses,Matrial,Events,instuite'>
+        <meta name="author" content="Cs-Hti-Student-Union">
+        <title>Hti-Cs Student Union</title>
+        <link rel="icon" href="media/logofinal.png">
+        <!-- For Erialer IE versions -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="Css/home.css" media="screen">
+    </head>
+    <body id="home">
+        <div id="loader" class="overlay-loader">
+		      <div class="loader-background color-flip"></div>
+            <img class="loader-icon spinning-cog" src="media/cog06.svg" alt="Spinner-image-for-load-screen">
+            <h2>Loading ...</h2>
+	   </div> 
+        
+        <header class="header">
+           
+            <!--The upper Static nav-->
+            <nav id="upper-nav">
+                <div class="container">
+                    
+                    <!--Text Data contact To our Community-->
+                    <ul id="contact-data" class="col-md-7 col-xs-12 list-unstyled text-uppercase" data-step="1" data-intro="ok This is" data-position="bottom">
+                        <li class="hidden-xs">
+                            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                        <span></span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                            <span></span>
+                        </li>
+                        <li>
+                            <i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
+                            <span></span>
+                        </li>
+                </ul>
+                    
+                    <!--Our Social Media Links For Contact-->
+                    <ul id="social-media-links" class="list-inline col-md-5 col-xs-12">
+                        <li><a target=""><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/hti_cs"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li> 
+                    </ul>
+                </div>
+            </nav> 
+    
+            <!--The Lower Dynamic Navbar (it's dynamic in active bar)-->
+            <nav class="navbar navbar-default">
+                <div class="container">
+            
+                    <!-- Brand and toggle button get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed btn btn-primary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="media/logofinal.png" class="img-responsive" alt="website-brand"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right text-capitalize">
+                            <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="aboutUs.html" class="hvr-bounce-to-top" >About Us</a></li>
+                            <li class="disabled" role="presentation"><a data-toggle="tooltip" data-placement="bottom" title="Still Under Development" href="#" class="hvr-bounce-to-top" >our team</a></li>
+                            <li><a href="courses.html" class="hvr-bounce-to-top" >courses</a></li>
+                            
+                            <!--DropDown List-item For Display all pages of website -->
+                            <li class="dropdown">
+                                <!--This item Data-->
+                                <a href="#" class="dropdown-toggle hvr-bounce-to-top" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages  <span class="caret"></span></a>
+                                
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="events.html" class="hvr-bounce-to-top">our Events</a></li>
+                                    <li><a href="blogs.html" class="hvr-bounce-to-top">Our Blogs</a></li>
+                                    <li><a href="news.html" class="hvr-bounce-to-top">our News</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="material.html" class="hvr-bounce-to-top">online HTI-material </a></li>
+                                </ul>
+                            
+                            
+                            </li><!--End Of DropDown List-items -->
+                            
+                            <li><a href="contactUs.html" class="hvr-bounce-to-top">Contact Us</span></a></li>
+                            
+                            <li><button class="btn btn-danger hidden-xs"  data-toggle="tooltip" data-placement="right" title="still Under Development">Rate WebSite</button></li>
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+               
+                </div><!-- /.container -->
+            </nav>    
+    
+            <!-- Main Carousel Of Homepage -->        
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                    <div class="overlay"></div>
+                    <img src="media/carousel5.jpg" alt="image-for-student-in-how-to-disuss-image">
+                    <article class="carousel-caption">
+                        <header>
+                            <h5>media team</h5>
+                            <h1>Welcome 2016 Students To Our instuite</h1>
+                            <span class="rule center-block"></span>
+                            <h4>Saturday 3 and Sunday 4 September</h4>
+                        </header>
+                        <a href="events.html" class="btn" id="check-event">Check Events</a>
+                    </article>
+                    <section class="message">
+                        <h2 class="message_same">Welcome Event For cs-hti 2016 students orgnize by us  </h2>
+                        <h6 class="message_same">by <a href="https://www.facebook.com/profile.php?id=100013092248523&fref=ts">NEW_START</a> media-team</h6>
+                    </section>
+                
+                
+                </div>
+        </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>    
+    
+    
+        </header>
+        <!--Qucik navigate to web site-->
+        <section id="discover-us">
+            <div class="container">
+                <div class="row">
+                    <header class="text-center center-block">
+                        <h2>DiscoverUs</h2>
+                        <span class="rule"></span>
+                    </header>
+                    <figure class="col-md-4 col-xs-12 go-contact">
+                    <img src="http://res.cloudinary.com/dpjzbs1ue/image/upload/c_scale,h_100/v1487500845/discover1_hz53jv.png" alt="icon-that-desribe-text" class="img-responsive img-circle  col-md-3 col-md-offset-0 col-xs-6 col-xs-offset-3">
+                        <div class="col-md-9 col-xs-12 text-left">
+                            <h5>maps & Location</h5>
+                            <p>Come And Talk With Us any Time</p>
+                        </div>
+                    </figure>
+                    
+                    <figure class="col-md-4 col-xs-12 go-events">
+                    <img src="http://res.cloudinary.com/dpjzbs1ue/image/upload/c_scale,h_100/v1487500501/discove2_js8emd.png" alt="icon-that-desribe-text" class="img-responsive img-circle  col-md-3 col-md-offset-0 col-xs-6 col-xs-offset-3">
+                        <div class="col-md-8 col-xs-12 text-left">
+                            <h5>our & events</h5>
+                            <p> What We do For You</p>
+                        </div>
+                    </figure>
+                    
+                    <figure onclick="window.open('https://en.wikipedia.org/wiki/Higher_Technological_Institute' , '_blank')" class="col-md-4 col-xs-12">
+                    <img src="media/discove3.png" alt="icon-that-desribe-text" class="img-responsive img-circle  col-md-3 col-md-offset-0 col-xs-6 col-xs-offset-3">
+                        <div class="col-md-9 col-xs-12 text-left">
+                            <h5>heritage</h5>
+                            <p>Learn More About higher teconoligical instiute</p>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <!-- Find Course -->
+        <section id="courses-search-engine" class="text-capitalize" data-toggle="tooltip" data-placement="top" title="search-engine Is Ready To use ">
+            <div class="container">
+                <div class="row">
+                    
+                    <!--Block 1-->
+                    <div class="half-block col-md-5 col-xs-12" id="find-course">
+                        <header class="center-block">
+                            <h2 class="text-center">Quick Find</h2>
+                            <span class="rule"></span>
+                        </header>
+                         <form action="" method="" class="col-xs-12" autocomplete="on">
+                            <h5 class="col-xs-10 col-xs-offset-2 ">Quick course Searching</h5>
+                             
+                             <!--Choosing Category-->
+                            <div class="form-group col-xs-12 input-control">
+                                <label for="online-course" class="sr-only">online course</label>
+                                <input type="text" list="CS-TRACKS" class="form-control own-control" id="course-category" placeholder="Choose Category">
+                                <button class="btn btn-danger" id="choose-category">Choose </button>
+                            </div>
+                             
+                            <datalist id="CS-TRACKS">
+                                <option value='none' selected> Default (none)</option>
+                                <option value="all">All Categories</option>
+                                <option value="web">All Web Tracks (development-design)</option>
+                                <option value="mobile">All Mobile Development Track (ios , android etc...)</option>
+                                <option value="gaming">All Game Development Track (unity , maya etc...)</option>
+                                <option value="mobile">All Mobile Development Track (ios , android etc...)</option>
+                                <option value="mobile">All Mobile Development Track (ios , android etc...)</option>
+                            </datalist>
+                             
+                             
+                             
+                             <!--Searchin course-->
+                            <div class="form-group col-xs-12 input-control">
+                                <label for="course-name" class="sr-only">hti-matrial</label>
+                                <input type="text" list="courses-results" class="form-control own-control" id="course-name" placeholder="Name Of Course">
+                                <button class="btn btn-danger" id="get-course">Search</button>
+                             </div>
+                             <datalist id="courses-results">
+                                <option value='none' selected >none</option>
+                            </datalist>
+                        </form>
+                    </div>
+                    
+                    <!--Block 2-->
+                    <div class="half-block col-md-7 col-xs-12" id="up-event">
+                        <header class="center-block">
+                            <h2 class="text-center">UpComing Event</h2>
+                            <span class="rule"></span>
+                        </header>
+                        
+                        <div class="col-md-5 col-xs-12" id="event-shortcut-data">
+                            <div class="row">
+                                
+                                <figure class="col-md-4 col-xs-3 img-rounded text-center" id="date">
+                                    <span>7</span> 
+                                    <figcaption>Mar</figcaption>    
+                                </figure>
+                                
+                                <h4 class="col-md-8 col-xs-9">Graduation Party 2016-2017</h4>
+                                
+                            </div>
+                        
+                            <figure class="time col-xs-offset-2 col-md-offset-0">
+                                <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                                <figcaption>9am - 6pm</figcaption>
+                            </figure>
+                        
+                            <figure class="time col-xs-offset-2 col-md-offset-0">
+                                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                                <figcaption>Conference Hall At S Buliding</figcaption>
+                            </figure>
+                        </div>
+                        
+                        
+                        <figure class="col-md-7 hidden-xs">
+                            <img class="img-responsive" alt='cleander-image' src="media/calendar-2.gif" style="height : 125px ; width :150px ;">
+                        </figure>
+                    </div>
+                   
+                </div>
+            </div>
+<!--            <div class="row">
+
+                <div class="col-md-6 col-xs-12">
+                    <h5 class="col-md-10 col-xs-10 col-xs-offset-2"> browse Courses</h5>
+                    <ul class="col-md-7 col-xs-10 col-md-offset-0 col-xs-offset-1  list-unstyled">
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>Web Development & Design</a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>Mobile Development</a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>Computer network</a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>software development</a> </li> 
+                    </ul>
+                    <ul class="col-md-5 hidden-sm hidden-xs list-unstyled">
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>Algorithms </a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>crossplate-form develoment </a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>ios Development </a> </li> 
+                        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a>ios Development </a> </li> 
+                    </ul>
+                </div>
+-->
+        </section>
+        
+        <!--Our Events section -->
+        <section id="our-events" class="home-events">
+            <div class="container">
+                <header class="text-center center-block">
+                        <h2>Our events</h2>
+                        <span class="rule"></span>
+                </header>
+                <div class="row">
+                     
+
+                        
+                </div>
+                <div class="col-md-4 col-xs-10 sa-events">
+                    <i class="fa fa-calendar-plus-o col-xs-2" aria-hidden="true"></i>
+                    <button class="col-xs-8">See All events</button>
+                </div>
+            </div>
+        </section>
+        
+           
+        <!--  Latest Courses added -->
+        <section id="latest-courses">
+            <header class="center-block text-center">
+                <h2>Latest Courses Added</h2>
+                <span class="rule"></span>
+            </header>
+            <div class="container">
+                <ul class="list-inline center-block text-center">
+                    <li class="active" data-filter="random">Random</li>
+                    <li data-filter="all">All</li>
+                    <li data-filter="web">Web Development</li>
+                    <li data-filter="mobile">mobile Development</li>
+                    <li data-filter="problemSolving">problem solving</li>
+                    <li data-filter="design">design</li>
+                    <li data-filter="gaming">gaming</li>
+                </ul>
+                <div class="row">
+                    
+                   
+                       
+                 
+                </div>
+                <div class="col-md-4 col-xs-10 sa-courses">
+                    <i class="fa fa-calendar-plus-o col-xs-2" aria-hidden="true"></i>
+                    <button class="col-xs-8">See All Courses</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Course of the  month -->
+        <section id="best-course">
+            <div class="container">
+                
+                <!--left Side with instrctor image and name -->
+                <div class="col-md-6 col-xs-12 left-side best-same">
+                    
+                    
+                    <figure class="col-md-3 col-md-offset-2 col-xs-4">
+                        <img class="img-circle img-responsive" alt="Image-for-best-course-of-monthes-cs50" src="media/malan.jpg">
+                    </figure>
+                    
+                    <header class="col-md-6 col-xs-8">
+                        <h4>Course Of The Month</h4>
+                        <p>Dived Malan</p>
+                        <p>Produced by <a href="#"> EDX </a>  ,, <a href="#"> HARVARDX</a></p>
+                    </header>
+                    
+                    
+                </div>
+                <div class="col-md-6  col-xs-12 right-side best-same">
+                    <h5 class="center-block">CS50,Harverdx , Introduction To Computer science</h5>
+                    <span class="center-block"><i class="fa fa-clock-o fa-lg"></i>12 Weeks</span>
+                    <span class="center-block"><i class="fa fa-video-camera" aria-hidden="true"></i>46 Video</span>
+                    <a href="https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/" class="btn">Check Course</a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Statices about us -->       
+        <section id="statices" class="text-center">
+            <div class="container">
+                <div class="row">            
+                    <figure class="col-md-3 col-xs-12 wow bounceInLeft" data-wow-offset="200" data-wow-duration="1">
+                        <img class=" col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3 img-responsive" alt="svg-img-that-refer-to-counter" src="media/user.svg">
+                        <div class="clearfix"></div>
+                        <div class="col-xs-8 col-xs-offset-2 col-md-10 col-md-offset-1 ">
+                            <span class="center-block timer" data-from="0" data-to="56" data-speed="30000" data-refresh-interval="50">56</span>
+                            <h5>Memeber</h5>
+                        </div>
+                    </figure> 
+
+                    <figure class="col-md-3 col-xs-12  wow bounceInUp" data-wow-offset="200" data-wow-duration="1">
+                        <div class="row">
+                            <img class=" col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3  img-responsive" alt="svg-img-that-refer-to-counter" src="media/meeting.svg">
+                            <div class="col-xs-8 col-xs-offset-2 col-md-10 col-md-offset-1">
+                                <span class="center-block timer" data-from="0" data-to="12" data-speed="40000" data-refresh-interval="50">12</span>
+                                <h5 class="center-block">Meeting</h5>
+                            </div>
+                        </div>
+                    </figure> 
+
+                    <figure class="col-md-3 col-xs-12 wow bounceInDown" data-wow-offset="200" data-wow-duration="1">
+                         <img class=" col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3  img-responsive" alt="svg-img-that-refer-to-counter" src="media/presentation%20(2).svg">
+                        <div class="col-xs-8 col-xs-offset-2 col-md-10 col-md-offset-1">
+                                <span class="center-block timer" data-from="0" data-to="12" data-speed="10000" data-refresh-interval="500">12</span>
+                                <h5 class="center-block">Sessions</h5>
+                        </div>
+                    </figure> 
+
+                    <figure class="col-md-3 col-xs-12 wow bounceInRight" data-wow-offset="200" data-wow-duration="1">
+                         <img class=" col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3  img-responsive" alt="svg-img-that-refer-to-counter" src="media/calendar.svg">
+                        <div class="col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3">
+                                <span class="center-block timer" data-from="0" data-to="6" data-speed="50000" data-refresh-interval="50" >6</span>
+                                <h5 class="center-block">event</h5>
+                        </div>
+                    </figure> 
+                </div>
+            </div>
+        </section>
+        
+
+
+        
+        <!-- start section accadmic -->
+        <section id="news">
+            <div class="container">
+                <header class="center-block text-center">
+                    <h2>Acadimc News </h2>
+                    <span class="rule"></span>
+                </header>
+                <div class="row">
+                    <!--Our dynamic News Contents Go Rright There-->
+                </div>
+                <div class="col-md-4 col-xs-10 sa-news">
+                    <i class="fa fa-calendar-plus-o col-xs-2" aria-hidden="true"></i>
+                    <button class="col-xs-8">See All News</button>
+                </div>
+            </div> 
+        </section>
+
+
+        <section id="home-hti-material">
+            <header class="center-block text-center">
+                <h2>Hti Material</h2>
+                <p>We Think it's good Thing To Provide You With Large Range Of Hti-material Resources</p>
+                <span class="rule"></span>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="ma-con col-xs-12 col-md-12 col-sm-12">
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-10 sa-materials">
+                    <i class="fa fa-calendar-plus-o col-xs-2" aria-hidden="true"></i>
+                    <button class="col-xs-8">See All Hti Materials</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Professors-->
+        <section id="profs">
+            <div class="container">
+                <div class="row">
+                    <section id="our-blogs" class="col-md-6 col-xs-12 wow bounceInLeft our-blogs" data-wow-offset="200" data-wow-duration="1s">
+                        <header class="text-center center-block">
+                            <h2>our blogs</h2>
+                            <span class="rule"></span>
+                        </header>
+                       <div>
+                        </div> 
+                       
+                      
+                    </section>
+                    <section id="our-professors" class="col-md-6 col-xs-12 wow bounceInRight" data-wow-offset="200" data-wow-duration="1s">
+                        <header>
+                            <h2>Say Hello To Professors</h2>
+                            <span class="rule"></span>
+                        </header>
+                        <div class="prof-slider">
+                            
+                            
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+
+        </footer>
+        
+       
+        
+        
+        
+        <!--navigation Button-->
+        <button id="move-down" class="nav-btn">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        </button>
+
+        <button id="move-up" class=" hidden nav-btn">
+            <i class="fa fa-long-arrow-up fa-lg" aria-hidden="true"></i>
+        </button>
+
+
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-             2Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="https://use.fontawesome.com/1c51655d76.js"></script>
+        <script src="js/jquery.bxslider.js"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.countto/0.1.0/jquery.countTo.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/staticPieces.js"></script>
+        <script src="js/preventAccess.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/scrollControl.js"></script>
+        <script src="js/home.js"></script>
+        <script src="js/eventsModule.js"></script>
+        <script src="js/coursesModule.js"></script>
+        <script src="js/newsModule.js"></script>
+        <script src="js/htiModule.js"></script>
+
+        <script>
+            $(function(){
+                
+            $('.timer').countTo();
+                //fire nice scroll
+           $("body").niceScroll({
+               cursorcolor:"#002e3b" ,
+               cursorwidth : '10px',
+               cursorborder : '2px solid #002e3b' ,
+               cursorborderradius : '1px',
+               horizrailenabled: false 
+           }); 
+    
+            //Customize bootstrap carousel 
+            $('.carousel').carousel({
+                interval : 6000 ,
+                keyboard : true 
+            });
+    
+        //BootStrap toolTip Plugin 
+         $('[data-toggle="tooltip"]').tooltip().show();
+    
+            })
+            new WOW().init();
+    </script>
+        
+    </body>
+</html>

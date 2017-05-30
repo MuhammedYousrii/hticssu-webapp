@@ -1,0 +1,568 @@
+@mixin header-module($root){
+//Satatc Element In all Pages 
+//Upper Nav
+nav#upper-nav {
+    
+    background-color: $dim-blue;
+    overflow: hidden;
+    color: $white;
+    height: 40px;
+    @include respond(xs, md) {
+        min-height: 80px;
+    }
+    //Left Side
+    #contact-data {
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        @include respond(xs, md) {
+            height: 40px;
+        }
+        li {
+            @include upper-nav();
+            @include transform(scaleY(1));
+            float: left;
+            margin: 0 5px;
+            &:first-child i {
+                color: $red
+            }
+            &:nth-child(2) i {
+                color: $green
+            }
+            &:last-child i {
+                color: $light-blue
+            }
+            i,
+            span {
+                padding: 0 1px
+            }
+        }
+    }
+    //right side
+    #social-media-links {
+        $main-color: fade-out($white, 0.4);
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+        // media
+        @include respond(xs, md) {
+            text-align: center;
+            height: 30px;
+            line-height: 30px
+        }
+        li {
+            cursor: pointer;
+            @include transition(all 0.3s ease);
+            text-align: center;
+            width: 40px;
+            border-left: 0.5px solid fade-out($white, 0.8);
+            &:nth-child(1):hover {
+                background: $facebook-color
+            }
+            &:nth-child(2):hover {
+                background: $twitter-color
+            }
+            &:nth-child(3):hover {
+                background: $linkedIn-color
+            }
+            &:nth-child(4):hover {
+                background: $youtueb-color
+            }
+            &:hover i {
+                color: $white
+            }
+            &:hover {
+                border: none
+            }
+            &:nth-child(4) {
+                margin-right: 35px
+            }
+            @include respond(xs, md) {
+                border: none;
+                border-radius: 50%;
+                height: 30px;
+                width: 30px
+            }
+        }
+        a {
+            text-decoration: none;
+            i {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+//Lower Nav
+.navbar {
+    margin-bottom: 0;
+    height: 60px;
+    border: 0;
+    @include border-radius(0);
+    background: $white;
+    .btn-danger {
+        margin: 10px 0 5px;
+        padding: 8px 5px;
+        @extend %aside-button ;
+    }
+    .navbar-right {
+        margin-right: 50px !important;
+        @include respond(xs, lg) {
+            margin-right: 0 !important
+        }
+    }
+    .collapse {
+        @include respond(xs ,md){
+        position: relative ;
+        z-index: 1000 ;
+        }
+    }
+    .navbar-brand img {
+    height: 70px;
+    width: 90px;
+    margin-top: -21%
+}
+    .navbar-nav > li {
+        height: 60px ;
+        .dropdown-menu {
+            right : auto ;  left: 0 ;
+            @include respond(xs ,md){background: $dim-blue ; position: relative ; z-index: 9999}
+        } 
+        & > a {
+            color: $dim-blue;
+            @include transform(scaleY(1.2));
+            font: {
+                weight: $semi-bold;
+                size: 12px
+            }
+            margin-right: 2px;
+            height: 91%;
+            line-height: 30px;
+            @include respond(xs, md) {
+                background: $dim-blue;
+                border-bottom: 1px solid;
+                @include small-font($white);
+                border-bottom: 0.5px solid fade-out($dim-blue , 0.5)
+            }
+            &:hover {color: $white}
+        }
+}
+    
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background: $dim-blue;
+    color: $white;
+}
+    
+    @if $root == true {
+        .root-con {
+        @extend %root-con
+            }
+    }
+
+}
+@mixin aside-module($searchForm , $category , $filter , $eventList , $newList , $course : false){
+    margin-top: 0px ;
+    height: auto ;
+     &.fixed {
+         position: fixed ; 
+         top: 0 ; 
+         right: 7% ;
+         width: 21% ;
+         }
+    
+    a.all{@extend %aside-button ; margin-top: 15px }
+    
+    %common-header {
+            h4{@include h4($red , capitalize , 1 , $medium) ;margin-bottom: 3px}
+            .rule{@include rule(80% , 2px , fade-out($light-gray , 0.2))}
+            @include respond(xs,md){ margin-bottom: 20px ; margin-left: 3px }
+        }
+    
+    
+    h5{@include h5($dim-blue , capitalize , 1 , $medium)}
+    li:hover h5 {color: $red ; text-decoration: underline ; cursor: pointer}
+    
+    @if $searchForm == true {
+        .search-form {
+            position: relative ;
+            background: $dim-blue ;
+            min-height: 1px ;
+            margin-bottom: 20px ;
+            @include border-radius(4px);
+            @include box-shadow(0px 1px 5px fade-out($dim-blue , 0.7));
+            &::before{
+                content: '';
+                position: absolute ;
+                top: -20px ;
+                left: 40% ;
+                height: 0 ; width: 0 ;
+                border: {
+                    style : solid ;
+                    color: $dim-blue transparent ;
+                    width: 0 30px 30px 30px ;
+                }
+            }
+            header {
+                text-align: center ;
+                padding: 10px 5px ;
+                h4 {
+                    @include h4($red , capitalize , 1 , $semi-bold);
+                }
+            }
+            .tip {
+                font-size: 9px ;
+                font-weight: $regular ;
+                color: $white ;
+                line-height: 0.9 ;
+            }
+            
+            label {@include xs-small-font($white)}
+            .input-control button {
+                width: 22% ;
+            }
+    }
+    }
+    
+    @if $category == true {
+         .category-menu {
+            li{
+                padding: 15px 5px ;
+                height: 50px ;
+                line-height: 25px ;
+                background: $dim-blue ;
+                color: $white ;
+                @include transition(all 0.3s linear);
+                &:first-child{
+                        position: relative ; 
+                        margin-bottom: 15px ;
+                        &::after {  
+                            content: '';
+                            position: absolute ;
+                            right: 5% ; 
+                            bottom: -20px ; 
+                            height: 0 ; 
+                            width: 0; 
+                            border: {width : 0 10px 15px 10px ; color : $dim-blue transparent; style : solid}
+                    }
+                }
+                &:hover {background: fade-out($dim-blue , 0.5) ; cursor: pointer}
+                &.active {background: $light-blue}
+            }
+    }
+    }
+    
+    @if $filter == true {
+          .tag-filter {
+            header {@extend %common-header}
+            li {@extend %tag-filter}
+    }
+    }
+    
+    @if $eventList == true  {
+        .recent {
+            margin: 10px 0 ;
+            @include respond(xs,md){padding: 0 15px}
+            header {@extend %common-header}
+            li{ 
+                @include respond(xs,md){
+                    text-align:left ;
+                    width: 80% ;
+                }
+                &:last-child {border: none}
+                 h6 {
+                    @include h6($green , capitalize , 1 , $regular);
+                    margin-bottom: 10px;
+                    padding-bottom: 10px ;
+                    border-bottom: 1px solid fade-out($light-gray , 0.3);
+                    margin-right: 5px ;
+                    i {margin-right: 5px}    
+            }
+            }
+        }     
+        .makeGap {
+                margin-top: 30px ;
+            }
+    }
+    
+    @if $newList == true {
+        .recent-with-image {
+            margin: 15px auto ; 
+            header {@extend %common-header}
+            .image-overlay {padding: 0}
+            img {
+                 height : 100px ;
+             }
+            li {
+                overflow: hidden ;
+                height: 120px ; 
+                margin-bottom: 5px ;
+                @include respond(xs,md){min-height: 400px ; text-align: center }
+                .overlay {
+                    position: absolute;
+                    background: fade-out($dim-blue , 0.2);
+                    top: 0 ;
+                    left: -150% ;
+                    display: flex ;
+                    @include transition(all .3s ease);
+                    i {
+                        color: $white ;
+                        margin: auto ;
+                        
+                    }
+            }
+                h6{@include h6($green , capitalize , 1 , $regular ) ; i {margin-right : 5px}}
+             &:hover .overlay {left:0  ; cursor: pointer}
+        }
+    }
+    }
+    
+    @if $course == true {
+        
+        // Related Courses To same Plateform Style
+        .related-courses {
+            margin: 15px auto ;
+            header {@extend %common-header}
+            li {
+                 
+                overflow: hidden;
+                min-height: 1px ;
+                margin-bottom: 5px;
+                .overlay {
+                    position: absolute;
+                    background: fade-out($dim-blue, 0.2);
+                    top: 0;
+                    left: -100%;
+                    display: flex;
+                    i {
+                        color: $white;
+                        margin: auto;
+                    }
+                }
+            }
+            h5 {@include h5($dim-blue , capitalize , 1 , $semi-bold)}
+            h6{@include h6($green , capitalize , 1 , $medium)}
+        }
+        
+        
+        //Time Table Detailed 
+        .course-detailed {
+            margin-top: 15px;
+            @include respond(xs,md){padding: 0 15px}
+            header {
+                @extend %common-header
+            }
+            .detail-menu{
+                li {
+                    display: flex;
+                    padding: 12px 8px ;
+                    background: $cold-gray ;
+                    margin: 3px auto ;
+                    @include small-font($dim-blue);
+                    @include border-radius(3px);
+                    i {
+                        color: $light-gray ;
+                        margin-right: 8px ;
+                    }
+                    .proprty-value {
+                        display: inline-block ;
+                        color: $green ;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//Static Header And Footer Modules 
+%normal-header {
+
+    @include header-module(false);
+    
+}
+%root-header {
+    @include header-module(true);
+}
+%footer {
+    //Static Footer Of All Pages 
+    background-color: $dim-blue;
+    min-height: 500px;
+    overflow-x: hidden;
+    padding: 10px 0 20px ;
+     %header{
+            h4  { @include h4($white , capitalize , 1 , $bold); letter-spacing: 1.2px}
+            .rule {@include rule(50px , 4px , $green)}
+        }
+
+    .footer-quote {
+        background: $white ;
+        border: 1px solid $white ;
+        @include border-radius(5px);
+        position: relative ;
+        padding: 10px 8px ;
+        text-align: center ;
+        p {
+            width: 85% ;
+            margin: auto ;
+            @include xs-small-font($black);
+            text-shadow : 0.5px 0.5px 1.5px $black ;
+        }
+        &::after {
+            content: '' ;
+            position: absolute ;
+            bottom: -20px ;
+            left: 35px ;
+            height:  0 ; width: 0 ;
+            border-style: solid ;
+            border-color: $white transparent;
+            border-width: 20px 22px 0 10px ;
+            @inlude border-radius(10px);
+            }
+       
+    }
+     .quote-author {
+	       @include xs-small-font($red);
+            padding-left: 8px ;
+            display: block ;
+         margin-top: 25px ;
+        }
+    
+    .line-devider {@include rule(80% , 1px  , fade-out($white , 0.8)) ; margin-left: 10% }
+
+    #bottom-side{
+        margin-top: 50px ;
+        //about-us-abber area
+        #footer-links {
+            color: $white ;
+            header { @extend %header }
+            li {
+                $li-color : fade-out($white , 0.3);
+                font-size: 12px;
+                font-weight: $bold ;
+                padding: 10px 0;
+                margin: 2px 0 ;
+                border-bottom: 1px solid fade-out($li-color , 0.6) ;
+                a{color: $li-color}
+                i {margin: 0 8px}
+                &:last-child {border: none}
+            }
+        }
+        //about-us-abber area
+
+
+        //Latest Nwes Area
+        #footer-news {
+            @include respond(xs,md){text-align: center}
+            header {@extend %header}
+            article {
+                color: $white ;
+                margin-bottom: 20px 0 ;
+                h5{@include h5($white , uppercase , 1 , $medium)}
+                img {
+                    border-radius: 8px;
+                    padding: 0 5px 
+                }
+                p {
+                    @include custom(dimgray , capitalize , null ,1 , $regular , 3.5);
+                    i{margin: 0 5px 0 -10px}
+                }
+                span{color: $red}
+            }
+        }
+         //Latest Nwes Area
+        
+        
+        //Gallery Area 
+        #footer-gallery {
+            header {@extend %header}
+            @include respond(xs,md){margin : 25px auto 0; text-align: center}
+            figure {                
+                position: relative ;
+                padding-left: 0 !important ;
+                margin: 4px 0;
+                overflow: hidden ;
+                @include border-radius(2px);
+                @include respond(xs,md){margin-top: 25px ; padding-left: auto }
+                @include respond (md,xl){img {height: 115px}}
+                
+                img {@include control-img(125px)}
+                
+            }
+        }
+        
+        
+        
+        #contact-data {
+            @include respond(xs,md){text-align: center ; margin-top: 25px}
+            header {@extend %header}
+            
+            
+            .footer-contact li {
+                @include h5($white , capitalize , 1 ,$semi-bold);
+                margin: 5px 0;
+                &:first-child i{color: $red }
+                &:nth-child(2) i{color: $green }
+                &:last-child i{color: $light-blue }
+                i,span{padding: 0 1px}
+                i{margin: 5px }
+                @include respond(xs,md){text-align: center}
+
+            }
+
+            .social-media li {
+                margin-top: 50px ;
+                height: 45px ;
+                width: 45px  ;
+                cursor: pointer ;
+                @include transition(all 0.3s ease);
+                display: inline-flex;
+                &:first-child {background: $facebook-color}
+                &:nth-child(2) {background: $twitter-color}
+                &:nth-child(3) {background: $youtueb-color}
+                &:last-child {background: $green}
+                &:hover {opacity: 0.8}
+                a { @extend %a-reset ; margin: auto}
+                i {
+                color: $white ;
+	           }
+        }
+    }
+    
+       
+    }
+    
+     .developed-by p {
+	    @include xs-small-font($white);
+        text-align: center ;
+        i{color: $red}
+}
+    
+}
+
+.header {
+    @extend %normal-header ;
+}
+.root-header {
+    @extend %root-header ;
+}
+footer {
+    @extend %footer
+}
+
+
+.aside-category-search-event {
+    @include aside-module(true , true , false , true , false)
+}
+.aside-filter-event-new{
+    @include aside-module(false , false , true ,true , true);
+}
+.aside-new-event {
+     @include aside-module(false , false , false ,true , true);
+}
+.aside-detail-related-event {
+    
+    @include aside-module(false , false , false ,true , false , true);
+}

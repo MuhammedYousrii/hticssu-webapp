@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>dashboard</title>
+        <!-- For Erialer IE versions -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" media="all">
+        <link rel="stylesheet" href="Css/sweetalert.css" media="all">
+        <link rel="stylesheet" href="Css/hover.css" media="all">
+        <link rel="stylesheet" href="Css/home.css" media="all">
+       
+    </head>
+    <body id="dashboard">
+        
+        <section>
+            <div class="container">
+                
+                <aside id="admin-profile">
+                    <button class="toggle-dashboard-aside"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                    <figure class="admin-case text-center">
+                        <img class="img-circle img-responsive" alt="admin presonal image" src="media/bob-tabor.png">
+                        <figcaption>
+                            <span>Online</span>
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                        </figcaption>
+                    </figure>
+                    <span class="dashboard-aside-rule">
+                    
+                    </span>
+                    <section class="admin-info">
+                        <header>
+                            <h4 class="bg-info">Admin Information</h4>
+                            <span class="rule"></span>
+                        </header>
+                        <p>Muhammed Yousrii</p>
+                        <p>Admin Code 112</p>
+                    </section>
+                    
+                </aside>
+                <nav class="col-md-6 col-md-offset-3 col-xs-12 text-center" id="dash-navbar">
+                    <ul class="list-inline">
+                        <li data-show="blog">Blog Form</li>
+                        <li data-show='new'>new Form</li>
+                        <li data-show='course' class="active">course Form</li>
+                        <li data-show='event'>Event Form</li>
+                        <li data-show='slider'>slider Form</li>
+                    </ul>
+                </nav>
+                
+                
+                <header class="col-xs-12 text-center" id="add-header">
+                    <h1>Addings Form</h1>
+                    <span class="rule"></span>
+                </header>
+              
+              
+                
+                
+                
+                <!--Blogs Adding Form 
+                <form id="blog-form" data-form="blog" class="col-xs-12 blog active">
+                    
+                        
+                        
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="blogHeadingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#blogCollapseOne" aria-expanded="true" aria-controls="blogCollapseOne">Blog Main Info</a>
+                                    </h4>
+                                </div>
+                                <div id="blogCollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="blogHeadingOne">
+                                    <div class="panel-body">
+                                        <section class="block col-xs-12">
+                                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                                <h2>Conetnt of blog</h2>
+                                                <p>At This Block You Will insert Main info For Blog Subject That Will HelpYou To Make Him in good Seacrh results</p>
+                                                <span class="rule"></span>
+                                            </header>
+                                            <div class="form-group col-xs-12">                        
+                                                <label for="blog-name" class="normal-label">blog headline (name of subject)</label>
+                                                <input type="text" name="headline" class="form-control headline" placeholder="type your blog name" data-length="60"  data-focus="">                            
+                                            </div>
+                                            <div class="form-group col-xs-12">
+                                                <label for="blog-image" class="normal-label">blog-background-image</label>
+                                                <input type="text" class="form-control urllink" name="blog-image" placeholder="Insert Your Url Image" data-focus="" data-length="250">
+                                            </div>
+                                            <div class="form-group col-xs-12">
+                                                <label for="blogIntro" class="normal-label">Subject Introduction</label>
+                                                <nav id="blog-intro-toolbar" class="align-default"></nav>
+                                                <iframe name="blogIntro" id="blogIntro" class="text-editor align-default"></iframe>
+                                                <div class="counter"></div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="blogHeadingTwo">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#blogCollapesTwo" aria-expanded="true" aria-controls="blogCollapesTwo">Blog Subject Content </a>
+                                    </h4>
+                                </div>
+                                <div id="blogCollapesTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="blogHeadingTwo">
+                                    <div class="panel-body">
+                                        <section class="block col-xs-12">
+                                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                                <h2>Blog Subject Content </h2>
+                                                <p></p>
+                                                <span class="rule"></span>
+                                            </header>
+                                            
+                                            <div class="form-group col-xs-12">
+                                                <label for="blog-content" class="normal-label"> Blog Subject Content </label>
+                                                <iframe name="blogMainContent" id="blogMainContent" class="text-editor align-default" data-length="1500"></iframe>
+                                                    <button id="get-content" class="btn btn-info col-xs-3 col-xs-pull-1 pull-right">get content</button>
+                                                <div class="counter"></div>
+                                            </div>
+
+                                            <div class="form-group col-xs-12">
+                                                <label for="tags" class="normal-label">Blog Tags (keyWords for this subject)</label>
+                                                <input type="text" class="form-control" name="blog-tags"  placeholder="write keywords for this subject" data-length="60" data-focus="">
+                                            </div>
+
+                                            <div class="form-group col-xs-12">
+                                                <label for="wisdom" class="normal-label">blog Wisdom (advice in this subject)</label>
+                                                <input type="text" class="form-control" name="blog-wisdom" placeholder="Write advice to help in this track" data-length="140" data-focus="">
+                                            </div>   
+                                        </section>  
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="blogHeadingThree">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#blogCollapsethree" aria-expanded="true" aria-controls="blogCollapsethree">Blog Subject Writer Informations</a>
+                                    </h4>
+                                </div>
+                                <div id="blogCollapsethree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="blogHeadingThree">
+                                    <div class="panel-body">
+                                        <section class="block col-xs-12">
+                                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                                <h4>Blog Subject Writer Informations</h4>
+                                                <p></p>
+                                                <span class="rule"></span>
+                                            </header>
+                                            <div class="form-group col-xs-12">
+                                                <label for="blog-writer-name" class="normal-label">writer name</label>
+                                                <input type="text" class="form-control" name="writer-name"  placeholder="type your name" data-length="20" data-focus=''>
+                                            </div>
+
+
+                                            <div class="form-group col-xs-12">
+                                                <label for="writer-image">Writer Image</label>
+                                                <input type="url" class="form-control urllink" name="writer-image"  data-length="250"> 
+                                            </div>
+
+                                            <div class="form-group col-xs-12">
+                                                <label for="writer-info" class="normal-label"> about  writer</label>
+                                                <input type="text" class="form-control" name="writer-info"  placeholder="type about youself" data-length="200" data-focus=''>
+                                            </div>
+
+
+                                            <div class="form-group col-xs-12">
+                                                <label for="accounts" class="normal-label">writer social accounts</label>
+                                                <input type="text" class="form-control" name="writer-accounts"  placeholder="type Your social acoounts url here" data-length="250" data-focus=''>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    
+                    <div class="btn-group  col-md-offset-2 col-xs-12">
+                        <input type="submit" value="sumbit Course" class="btn btn-primary col-md-2 col-xs-6">
+                        <input type="submit" disabled value="check View" class="btn btn-info col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Edit Course" class="btn btn-warning col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Delete Course" class="btn btn-danger col-md-2 col-xs-6">
+                    </div>
+                </form> 
+                -->
+                
+                <form id="new-form" data-form="new" class="new col-xs-12">
+                    
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="newHeadingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#newCollapseOne" aria-expanded="true" aria-controls="newCollapseOne">New Block Main Content</a> 
+                                </h4>
+                            </div>
+                            <div id="newCollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="newHeadingOne">
+                              <div class="panel-body">
+                                  <section class="block col-xs-12">
+
+                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                <h2>New Main Informations</h2>
+                                <p>At This Block You should Provide Agood Headline With image To Be abackground For NewBlock then You will Meet Our Bianky Editor To Create Agreat New With it's Features</p>
+                                <span class="rule"></span>
+                            </header>
+
+
+                                    <div class="form-group col-xs-12">
+                                        <label for="new-head" class="normal-label"> New HeadLine </label>
+                                        <input type="text" class="form-control headline" name="headline"  placeholder="new Headline" data-length="70" data-focus="">
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <label for="new-image" class="normal-label"> New Image </label>
+                                        <input type="url" class="form-control urllink" name="image"  placeholder="new Image Url" data-length="250" data-focus="">
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <label for="new-body" class="normal-label"> New Content</label>
+                                        <iframe name="newRichTextField" id="newRichTextField" class="text-editor align-default"></iframe>
+                                                <button id="get-content" class="btn btn-info col-xs-3 col-xs-pull-1 pull-right">Save Content</button>
+                                        
+                                    </div>
+                                  </section>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="newHeadingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#newCollapseTwo" aria-expanded="true" aria-controls="newCollapseTwo">New Block Writer Info</a> 
+                                </h4>
+                            </div>
+                            <div id="newCollapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="newHeadingTwo">
+                                <div class="panel-body">
+                                    <section class="block col-xs-12">
+                                        <header class="block-header col-xs-8 col-xs-offset-2">
+                                            <h2>New Writer Information</h2>
+                                            <p>At This Block You Will Track YourSelf And Get The Data We Need About you the add it here Like Your Name , Your Job , bio </p>
+                                            <span class="rule"></span>
+                                        </header>
+
+
+                                        <div class="form-group col-xs-12">
+                                            <label for="writer-name" class="normal-label">Writer Name </label>
+                                            <input type="text" class="form-control" name="writer-name" id="writer-name" placeholder="Type Your name" data-length="20" data-focus=""> 
+                                        </div>
+                                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="writer-image" class="normal-label">Writer image </label>
+                                            <input type="text" class="form-control urllink" name="writer-image" placeholder="Paste Writer image URL" data-length="250" data-focus=""> 
+                                        </div>
+                                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="writer-bio" class="normal-label">Writer Bio </label>
+                                            <input type="text" class="form-control" name="writer-bio" placeholder="about New Writer" data-length="500" data-focus=""> 
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="writer-job" class="normal-label">Writer Job </label>
+                                            <input type="text" class="form-control" name="writer-job" placeholder="Operation Team Member" data-length="25" data-focus=""> 
+                                        </div>
+
+
+                                        
+                        
+                                        
+                    
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="newHeadingThree">
+                                 <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#newCollapseThree" aria-expanded="true" aria-controls="newCollapseThree">New Block Extrnal Info </a> 
+                                </h4>
+                                <div id="newCollapseThree" class="panel-collapse collapse in" role="tabpanel"  aria-labelledby="newHeadingThree">
+                                    <div class="panel-body">
+                                        <section class="block col-xs-12">
+                                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                                <h2>New Extrnal Information (Requierd)</h2>
+                                                <p>At This Block You Should Provide Extrnal informations About New but it's very Importnat To make This new Block To be in good results while searching</p>
+                                                <span class="rule"></span>
+                                            </header>
+                                            
+                                            <div class="form-group col-xs-12">
+                                                <label for="refer-link" class="normal-label">New Links On Our Socaial media</label>
+                                                <a role="button" class="btn binaky-btn pull-right listitem">@</a>
+                                                <input type="url" class="form-control urllink" name="links" id="refer-link" placeholder="Insert Link Of new on social media" data-length="250" data-focus="">
+                                            </div>
+                                            
+                                            <div class="form-group col-xs-12">
+                                                <label for="new-tag" class="normal-label"> New Tags </label>
+                                                <a role="button" class="btn binaky-btn pull-right listitem">@</a>
+                                                <input type="text" class="form-control" name="tags"  placeholder="new tags" data-length="80" data-focus="">
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="btn-group col-md-8 col-md-offset-2 col-xs-12">
+                        <input type="submit" value="sumbit new" class="btn btn-primary col-md-2 col-xs-6">
+                        <input type="submit" disabled value="check View" class="btn btn-info col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Edit new" class="btn btn-warning col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Delete new" class="btn btn-danger col-md-2 col-xs-6">
+                    </div>
+                    
+                </form>
+                
+               <!--  <form id="course-form" class="col-xs-12 course" data-form="course">
+                    
+                    
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Course Main Info</a>
+                                </h4>
+                            </div>
+                            
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <section class="block" id="course-main-info">
+                        
+                                        <header class="block-header col-xs-8 col-xs-offset-2">
+                                            <h2>Course main info </h2>
+                                            <p>This Block From AddingCourse Is About Course Main Info That help You if written Good to Be in good Range When Searching and easy to access form Categories </p>
+                                            <span class="rule"></span>
+                                        </header>
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-name" class="normal-label"> Course Name </label>
+                                            <input type="text" class="form-control headline" name="course-name" placeholder="Learn C# Basices In Arabic" data-length="70" data-focus=''>
+                                        </div>
+
+
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-image" class="normal-label"> Course background Image </label>
+                                            <input type="url" class="form-control urllink" name="course-image"  placeholder="Insert the url of course background" data-length="250" data-focus=''>
+                                        </div>
+
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-link" class="normal-label"> Course Link </label>
+                                            <input type="url" class="form-control urllink" name="course-link"  placeholder="Insert the url of course course" data-length="250" data-focus=''>
+                                        </div>
+
+
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-plateform" class="lg-label"> Course plateform or channel that present this course </label>
+                                            <input type="text" class="form-control" name="course-plateform"  placeholder="ElzeroWebSchool  @  https://www.youtube.com/user/OsamaElzero" data-length="100" data-focus=''>
+                                        </div>
+
+
+                        
+                                    </section>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Courses Content</a> 
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <section class="block" id="course-content">
+                                        <header class="block-header col-xs-8 col-xs-offset-2">
+                                            <h2>Course Content Detailes</h2>
+                                            <p>At This Block You Will Meet Our BiankyEditor For Creating Good Describtion That Give User Agood Overview On Course With Supporting from PreRequest Skills & Requiers Tool</p>
+                                            <span class="rule"></span>
+                                        </header>
+                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-describe" class="normal-label"> Course Desribition </label>
+                                            <iframe name="richTextField" id="richTextField" class="text-editor align-default" data-length="1500"></iframe>
+                                            <div class="counter"></div>
+                                        </div>
+                        
+                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-prerequests" class="lg-label"> Course PreRequest (what should i 'v  been learned To Enroll this course )</label>
+                                            <a  role="button" class="binaky-btn btn pull-right listItem">@</a>
+                                            <input type="text" class="form-control" name="course-pre"  placeholder="preRequest + @ + prerequst + @ etc " data-length="200" data-focus=''>
+                                        </div>
+                        
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-requirements" class="lg-label"> Course requirements (what should i 'v  been have To Enroll this course )</label>
+                                            <a  role="button" class="binaky-btn btn pull-right listItem">@</a>
+                                            <input type="text" class="form-control" name="course-req"  placeholder="requirement + @ + requirement + @ etc " data-length="200" data-focus=''>
+                                        </div>
+                                                
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">course instructor Info</a> 
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <section class="block" id="course-instructor-info">
+                                        <header class="block-header col-xs-8 col-xs-offset-2">
+                                            <h2>Instructor presonal informations</h2>
+                                            <p>At This Block You Will Apply Social Engineering On Course Presnter You Will Track Him On Media And Get His Data To make it Easy for user To communicate with him</p>
+                                            <span class="rule"></span>
+                                        </header>
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-instructor-name" class="normal-label"> Course instructor name</label>
+                                            <input type="text" class="form-control writer-name" name="instructor-name"  placeholder="Course Instructor" data-length="25" data-focus="">
+                                        </div>
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-instructor-image" class="normal-label"> Course instructor image</label>
+                                            <input type="url" class="form-control writer-image urllink" name="instructor-image"  placeholder="Course Instructor image url" data-length="250" data-focus="">
+                                        </div>
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-instructor-bio" class="normal-label"> Course instructor Bio</label>
+                                            <input type="text" class="form-control writer-bio" name="instructor-bio"  placeholder="Course Instructor bio (about him)" data-length="500" data-focus="">
+                                        </div>
+                                        <div class="form-group col-xs-12">
+                                            <label for="course-instructor-accounts" class="normal-label"> Course instructor accounts</label>
+                                            <a role="button" class="btn binaky-btn pull-right listItem">@</a>
+                                            <input type="text" class="form-control writer-accounts" name="instructor-accs"  placeholder="Course Instructor" data-length="250" data-focus="">
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingfour">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">Course Extrnal Info</a>
+                                </h4>
+                            </div>
+                            <div id="collapsefour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfour">
+                                <div class="panel-body">
+                                    <section class="block" id="extrnal-info">
+                                        <header class="block-header col-xs-8 col-xs-offset-2">
+                                            <h2>Course Shudele Info It's Extrnal But Very "requierd" </h2>
+                                            <p></p>
+                                            <span class="rule"></span>
+                                        </header>
+                                        <div class="form-group col-md-6 col-xs-12 no-margin">
+                                            <label for="course-weeks" class="lg-label">Course Weeks schedule</label>
+                                            <input type="number" class="form-control" name="week-duration"  placeholder="none" data-length="2" max="25" min="0">
+                                        </div>
+
+                                         <div class="form-group col-md-6 col-xs-12 no-margin">
+                                            <label for="course-videos" class="lg-label">Course videos Number</label>
+                                            <input type="number" class="form-control" name="video-number"  placeholder="none" data-length="3" max="250" min="0">
+                                        </div>
+
+                                         <div class="form-group col-md-6 col-xs-12 no-margin">
+                                            <label for="course-hours" class="lg-label">Course hours duration</label>
+                                            <input type="number" class="form-control" name="hour-duration"  placeholder="none" data-length="3" max="150" min="0">
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-xs-12 no-margin">
+                                            <label for="course-views" class="lg-label">Course Views Number Or Enrollment number</label>
+                                            <input type="number" class="form-control" name="view-number"  placeholder="none" data-length="7" max="1000000" min="0">
+                                        </div>
+
+
+
+                                         <div class="form-group col-xs-12">
+                                            <label for="course-category" class="normal-label">Course Categiores</label>
+                                            <input type="text" class="form-control" name="course-category"  placeholder="Course Categories" data-length="50" >
+                                             <ul class="list-inline common-category">
+                                             </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    <div class="btn-group col-md-offset-2 col-xs-12">
+                        <input type="submit" value="sumbit Course" class="btn btn-primary col-md-2 col-xs-6">
+                        <input type="submit" disabled value="check View" class="btn btn-info col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Edit Course" class="btn btn-warning col-md-2 col-xs-6">
+                        <input type="submit" disabled value="Delete Course" class="btn btn-danger col-md-2 col-xs-6">
+                    </div>
+                </form>-->
+        
+               <!-- <section class="admin-login-modal">
+                    <div class="container">
+                        <div class="row">
+                            <div class="admin-login-popup">
+                            <header class="block-header col-xs-8 col-xs-offset-2">
+                                <h2>Hti-cs Student Union Login</h2>
+                                <p>DashBoard Login for WebSite Admins</p>
+                                <span class="rule"></span>
+                            </header>
+                            <form class="col-xs-10 col-xs-offset-1" id="login-form">
+                                <div class="form-group">
+                                    <label for="admin-login-username" class="normal-label">User name :</label>
+                                    <input type="text" class="form-control"  placeholder="username" data-length="20">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="admin-login-password" class="normal-label">password :</label>
+                                    <input type="password" class="form-control"  placeholder="*****" data-length="20">
+                                </div>
+
+                                <input type="submit" class="btn btn-info col-md-4 col-xs-6" value="login">
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                
+                <section class="bianky-modal">
+                    <div class="container">
+                        <button class="pull-right close"><i class='fa fa-close fa-lg' aria-hidden="true"></i></button>
+                        <div class="row">
+                            <div class="bianky-popup">
+                                <header class="block-header col-xs-8 col-xs-offset-2">
+                                    <h2>Inserting Link </h2>
+                                    <p>At This Popup We provide to inputBox To Get LinkUrl And Link Name To Show It</p>
+                                    <span class="rule"></span>
+                                </header>
+                                
+                                <form id="modal-form" class="col-xs-10 col-xs-offset-1">
+                                    <!--Our dynaimc html go right here -->
+                                    <div class="form-group col-xs-12 one"></div>
+                                    <div class="form-group col-xs-12 two"></div>
+                                    <div class="from-group col-xs-12 extrnal-modal hidden-xs"></div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="btn-group col-xs-12 ">
+                                        <a role="button" class="btn btn-warning col-md-3 col-xs-6 cancel">Cancel</a>
+                                        <a role="button" class="btn btn-info  col-md-3 col-xs-6 control-modal">done</a>
+                                    </div>
+
+                                </form>
+                                
+                                                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+                
+            </div>
+        </section>
+         
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-             2Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+        <script src="https://use.fontawesome.com/1c51655d76.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/bianky.js"></script>
+        <script src="js/dash-control.js"></script>
+    </body>
+</html>

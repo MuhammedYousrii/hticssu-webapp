@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The Official WebSite For Cs-Hti Student-Union">
+        <meta name="keywords" content='Hti,Student,Union,ComputerScience,Courses,Matrial,Events,instuite'>
+        <meta name="author" content="Cs-Hti-Student-Union">
+        <title>Hti-Cs Student Union</title>
+        <link rel="icon" href="media/logofinal.png">
+        <!-- For Erialer IE versions -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"   crossorigin="anonymous">
+        <link rel="stylesheet" href="Css/bootstrap-tour.min.css" media="all">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" media="all">
+        <link rel="stylesheet" href="Css/hover.css" media="all">
+        <link rel="stylesheet" href="Css/sweetalert.css" media="all">
+        <link rel="stylesheet" href="Css/home.css" media="screen">
+    </head>      
+    <body id="contact-us">
+        <div id="loader" class="overlay-loader">
+            <div class="loader-background color-flip"></div>
+            <img class="loader-icon spinning-cog" src="media/cog06.svg">
+            <h2>Loading ...</h2>
+        </div>
+        
+        
+        
+        <header class="root-header">
+            <!--The upper Static nav-->
+            <nav id="upper-nav">
+                <div class="container">
+                    
+                    <!--Text Data contact To our Community-->
+                    <ul id="contact-data" class="col-md-7 col-xs-12 list-unstyled text-uppercase" data-step="1" data-intro="ok This is" data-position="bottom">
+                        <li class="hidden-xs">
+                            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                        <span>The M Bulding Next to Small El 10 PoliceStation </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                            <span>01158737518</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
+                            <span>hti.su.cs@gmail.com</span>
+                        </li>
+                </ul>
+                    
+                    <!--Our Social Media Links For Contact-->
+                    <ul id="social-media-links" class="list-inline col-md-5 col-xs-12">
+                        <li><a href="https://www.facebook.com/profile.php?id=100013092248523&fref=ts"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/hti_cs"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li> 
+                    </ul>
+                </div>
+            </nav> 
+    
+            
+            
+            <!--The Lower Dynamic Navbar (it's dynamic in active bar)-->
+            <nav class="navbar navbar-default">
+                <div class="container">
+            
+                    <!-- Brand and toggle button get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed btn btn-primary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="media/logofinal.png" class="img-responsive" alt="website-brand"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right text-capitalize">
+                            <li><a href="/" class="hvr-bounce-to-top">Home</a></li>
+                            <li><a href="aboutUs.html" class="hvr-bounce-to-top" >About Us</a></li>
+                            <li><a href="" class="hvr-bounce-to-top" >our team</a></li>
+                            <li><a href="courses.html" class="hvr-bounce-to-top" >courses</a></li>
+                            
+                            <!--DropDown List-item For Display all pages of website -->
+                            <li class="dropdown">
+                                <!--This item Data-->
+                                <a href="#" class="dropdown-toggle hvr-bounce-to-top" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages  <span class="caret"></span></a>
+                                
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="events.html" class="hvr-bounce-to-top">our Events</a></li>
+                                    <li><a href="blogs.html" class="hvr-bounce-to-top">Our Blogs</a></li>
+                                    <li><a href="news.html" class="hvr-bounce-to-top">our News</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="material.html" class="hvr-bounce-to-top">online HTI-material </a></li>
+                                </ul>
+                            
+                            
+                            </li><!--End Of DropDown List-items -->
+                            
+                            <li class="active"><a href="contactUs.html" class="hvr-bounce-to-top">Contact Us<span class="sr-only">(current)</span></a></li>
+                            
+                            <li><button class="btn btn-danger hidden-xs"  data-toggle="tooltip" data-placement="right" title="still Under Development">Rate WebSite</button></li>
+
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+               
+                </div><!-- /.container -->
+            </nav>  
+    
+        <!--The photo of Page With Root -->
+        <section class="root-con">
+        <div class="overlay">
+            <div class="container">
+                <header>
+                    <h3>contact  Us</h3>
+                    <span class="rule"></span>
+                </header>
+                <ul class="list-inline text-capitalize">
+                    <li><a href="/"> home </a></li>
+                    <li><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+                    <li><a href="aboutUs.html">contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</header>
+       
+    
+    
+    <!--Contact-us-Describe -->
+    <section id="contact-us-describe">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-7 col-xs-12 ">
+                    <header>
+                        <h3>Keep Touch With Us</h3>
+                        <span class="rule"></span>
+                    </header>
+                    <p>
+                        We Launch Beta Version Of Our Web Site He Work 20% correctly 
+                        The determiend Time For Lunch Is 1/12/2016 But We Decieded To make You Part Of This 
+                        So We Want You To Keep Touch With Us We want To Know Your Ideas Your Suggestion Your Rate On Dialy upadtes We Will Add Your message Will Be something Awesome for us here,, Fill Form With Your Real data And Send Your Message to us  ..
+                        This Is the Most important Page Now We Hope To Message us
+                    </p>
+                </article>
+                
+                <img class="col-md-5 xs-hidden" src="media/preview-01.png" height="280" alt="message-Us">
+            </div>
+            <div class="arrow hidden-xs">
+                <i class="fa fa-chevron-down"></i>
+            </div>
+
+        </div>
+    </section>
+    
+    <div class="curve"></div>
+    
+    <!-- start feature -->
+    <section id="contact-form">
+        <header class="wow wobble" data-wow-duration="1s" data-wow-offset="200">
+            <h2>message <strong>U</strong>s </h2>
+            <span class="rule"></span>
+        </header>
+        <div class="container">
+            <form class="col-md-12 col-xs-12" autocomplete="on">
+                <section id="left-one" class="col-md-6 col-xs-12">
+                    <div class="form-group wow bounceInLeft" data-wow-duration="1s" data-wow-offset="200">
+                        <label for="username">username</label>
+                        <input type="text" id="username" name="name" class="form-control" placeholder="UserName" onfocus="this.placeholder=''" onblur="this.placeholder='UserName'"  required>
+                    </div>
+
+                    <div class="form-group wow bounceInLeft" data-wow-duration="1s" data-wow-offset="220">
+                        <label for="email">email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'" required>
+                    </div>
+                    
+                    
+                    <div class="form-group wow bounceInLeft" data-wow-duration="1s" data-wow-offset="200">
+                        <label for="idnumber">id number</label>
+                        <span class="show" id="show-pass" ><i class="fa fa-eye fa-lg" aria-hidden="true"></i></span>
+                        <input type="password" id="idnumber" name="idnumber" class="form-control" placeholder="id number" onfocus="this.placeholder=''" onblur="this.placeholder='id number'" required >                 
+                    </div>
+                </section>
+                
+                
+                
+                <!--Right Area of Form-->
+                
+                <div class="form-group col-md-6 col-xs-12 wow bounceInRight" data-wow-duration="1s" data-wow-offset="220">
+                    <div id="char-counter"><span id="max-length">200</span>/<span id="rem">200</span></div>
+                    <textarea class="form-control" name="message" placeholder="Write what's on your mind" maxlength="200"></textarea>
+                </div>
+                <div id="error-message" style="display : none;">erorr</div>
+               
+                <input type="submit" id="send-feedback-btn" class="col-md-6 col-xs-12">
+            </form>
+        </div>
+    </section>
+    
+    <!-- end feature -->
+    <section id="map-con">
+        <ul class="list-unstyled hidden-xs hidden-sm">
+            <h4>We Are There ... </h4>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> Saturday</span>  From 8:00 -- To 3:00</li>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> sunday</span>  From 8:00 -- To 3:00</li>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</span>  From 8:00 -- To 3:00</li>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> Tuesday</span>  From 8:00 -- To 3:00</li>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> Wednesday</span>  From 8:00 -- To 3:00</li>
+            <li><span><i class="fa fa-calendar-o" aria-hidden="true"></i> Thursday</span>  From 8:00 -- To 3:00</li>
+            <p> You can always Found Us in the M bulding <br/> At the Union Room In The 1<sup>th</sup> floor </p>
+        </ul>
+        <ul class="list-unstyled">
+             <li>
+                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                <span>The M Building Next To Elasher policeStation</span>
+            </li>
+            <li>
+                <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                <span>01281476659</span>
+            </li>
+            <li>
+                <i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
+                <span>Info@Hticssu.Com</span>
+            </li>
+        </ul>
+<!--        <div id="map"></div>-->
+        <iframe id="map"
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAc9RUBHUi5mJPGLtKClamMNF8LLSbrgOU
+    &q=Space+Needle,Seattle+WA" allowfullscreen>
+</iframe>   
+    </section>
+    
+    
+    
+        <footer>
+        
+        </footer>
+    
+    
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous">
+        </script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-             2Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="https://use.fontawesome.com/1c51655d76.js"></script>
+        <script src="js/jquery.bxslider.js"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJiqI_pUAPAcyM7bMHxTtFhskR1QR8pbU&callback=initMap" async defer></script>
+        <script src="https://cdn.jsdelivr.net/jquery.countto/0.1.0/jquery.countTo.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/jRating.jquery.js"></script>
+        <script src="js/bootstrap-tour.min.js"></script>
+        <script src="js/plugin.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/contactUs.js"></script>
+        
+        
+ 
+
+    </body>
+</html>

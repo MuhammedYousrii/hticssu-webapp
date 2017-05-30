@@ -1,0 +1,48 @@
+//See all buttons in home page 
+
+@mixin see-all($background){
+    button{
+        color: $white ; 
+        padding: 5px 15px ;
+        position: absolute;
+        background: $background ;
+        border: none ;
+        &::after {
+            content: '';
+            position: absolute ; 
+            left: 0 ; 
+            top: 10px ;
+            height: 0 ; width: 0 ;
+            border: {
+                style : solid ;
+                color: transparent $black ; 
+                width: 5px 0 5px 5px ;
+            }
+        }
+    }
+    i {
+        color: $background ;
+        padding: 8px 10px ;
+        background: $black ;
+    }
+}
+
+%aside-button {
+    width: 150px ;
+    background: $red ; 
+    color: $white ; 
+    @include border-radius(3px);
+    padding: 5px 8px ;
+    cursor: pointer ;
+}
+
+@mixin mid-page-block-btn($buttnBackground) {
+    width: 150px ;
+    border: 1px solid $buttnBackground ; 
+    background: $buttnBackground ; 
+    color: $white ; 
+    @include border-radius(2px);
+    padding: 5px 8px ;
+    @include box-shadow(-1px -1px 3px fade-out($buttnBackground , 0.7));
+    cursor: pointer ;
+}

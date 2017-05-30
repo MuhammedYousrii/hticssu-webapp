@@ -1,0 +1,53 @@
+$breakpoints : (
+    xs : 320px ,
+    sm : 480px ,
+    md: 768px ,
+    lg : 980px ,
+    xl : 1450px 
+);
+
+
+
+
+
+//My Colors 
+$orange :#EC595F ;
+$blue : #002E3B ;
+$gray : #E7E7E7 ;
+$light-gray : #E8E8E8 ; 
+$cold-gray : #F6F6F6 ;
+
+//ContactUs Colors 
+$dim-blue : #002E3B ;
+$light-blue : #4c9df9 ;
+$white : #fff ;
+$red : #EC595E ;
+$green : #599E67;
+$black : #323232 ;
+
+
+//Social media Colors 
+$facebook-color : #3B5998 ; 
+$linkedIn-color : #1985BC ; 
+$twitter-color : #2BA9E4;
+$youtueb-color : #E8544D ;
+
+
+
+$see-all : (
+    'sa-events' : $green ,
+    'sa-courses' : $red , 
+    'sa-news' : $light-blue ,
+    'sa-materials' : $twitter-color
+);
+
+//Fonts And Weights 
+@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,600,700,800');
+$text-font :'Kanit', sans-serif;
+
+
+$ex-bold : 800 ; 
+$bold : 700 ;
+$semi-bold : 600 ;
+$medium : 500 ; 
+$regular : 400 ;

@@ -1,0 +1,2455 @@
+@import "bourbon/bourbon";
+@import "_Variables.scss";
+@import "_typography.scss";
+@import "_control.scss";
+@import "_bxSlider";
+@import "_buttons.scss";
+@import '_static-block';
+@import "_dashboard.scss";
+@import "_hover-customization.scss";
+@import "_slick.scss";
+@import "_slick-theme";
+
+body {
+    background: $white;
+    line-height: 1.47;
+    font-family: $text-font;
+    overflow-x: hidden;
+    width: 100%;
+    @extend %placeholder;
+}
+
+//Loader 
+.overlay-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    .loader-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #2C4762;
+        @include transition(background-color .2s 0s linear, right .2s .3s ease-out);
+        @include animation(color-flip 6.5s .6s infinite linear);
+    }
+    h2 {
+        @include h2($white, uppercase, 1.8);
+        position: absolute;
+        top: 60%;
+        left: 45%;
+        @include respond(xs, md) {
+            left: 40%
+        }
+    }
+    @keyframes color-flip {
+        0% {
+            background-color: $dim-blue
+        }
+        18% {
+            background-color: $dim-blue
+        }
+        20% {
+            background-color: $dim-blue
+        }
+        38% {
+            background-color: $dim-blue
+        }
+        40% {
+            background-color: $dim-blue
+        }
+        58% {
+            background-color: $light-blue
+        }
+        60% {
+            background-color: $light-blue
+        }
+        78% {
+            background-color: $light-blue
+        }
+        80% {
+            background-color: $light-blue
+        }
+        98% {
+            background-color: $light-blue
+        }
+        100% {
+            background-color: $dim-blue
+        }
+    }
+    @-webkit-keyframes color-flip {
+        0% {
+            background-color: $dim-blue
+        }
+        18% {
+            background-color: $dim-blue
+        }
+        20% {
+            background-color: $dim-blue
+        }
+        38% {
+            background-color: $dim-blue
+        }
+        40% {
+            background-color: $dim-blue
+        }
+        58% {
+            background-color: $light-blue
+        }
+        60% {
+            background-color: $light-blue
+        }
+        78% {
+            background-color: $light-blue
+        }
+        80% {
+            background-color: $light-blue
+        }
+        98% {
+            background-color: $light-blue
+        }
+        100% {
+            background-color: $dim-blue
+        }
+    }
+    @-moz-keyframes color-flip {
+        0% {
+            background-color: $dim-blue
+        }
+        18% {
+            background-color: $dim-blue
+        }
+        20% {
+            background-color: $dim-blue
+        }
+        38% {
+            background-color: $dim-blue
+        }
+        40% {
+            background-color: $dim-blue
+        }
+        58% {
+            background-color: $light-blue
+        }
+        60% {
+            background-color: $light-blue
+        }
+        78% {
+            background-color: $light-blue
+        }
+        80% {
+            background-color: $light-blue
+        }
+        98% {
+            background-color: $light-blue
+        }
+        100% {
+            background-color: $dim-blue
+        }
+    }
+    @-ms-keyframes color-flip {
+        0% {
+            background-color: $dim-blue
+        }
+        18% {
+            background-color: $dim-blue
+        }
+        20% {
+            background-color: $dim-blue
+        }
+        38% {
+            background-color: $dim-blue
+        }
+        40% {
+            background-color: $dim-blue
+        }
+        58% {
+            background-color: $light-blue
+        }
+        60% {
+            background-color: $light-blue
+        }
+        78% {
+            background-color: $light-blue
+        }
+        80% {
+            background-color: $light-blue
+        }
+        98% {
+            background-color: $light-blue
+        }
+        100% {
+            background-color: $dim-blue
+        }
+    }
+    .loader-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -48px 0 0 -48px;
+        font-size: 96px;
+        color: #FFF;
+        @include respond(xs, md) {
+            left: 50%
+        }
+    }
+}
+
+.overlay-loader .loader-icon.spinning-cog {
+    @include animation(spinning-cog 1.3s infinite ease)
+}
+
+@-webkit-keyframes spinning-cog {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+    20% {
+        -webkit-transform: rotate(-45deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes spinning-cog {
+    0% {
+        -moz-transform: rotate(0deg)
+    }
+    20% {
+        -moz-transform: rotate(-45deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg)
+    }
+}
+
+@-o-keyframes spinning-cog {
+    0% {
+        -o-transform: rotate(0deg)
+    }
+    20% {
+        -o-transform: rotate(-45deg)
+    }
+    100% {
+        -o-transform: rotate(360deg)
+    }
+}
+
+@keyframes spinning-cog {
+    0% {
+        transform: rotate(0deg)
+    }
+    20% {
+        transform: rotate(-45deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes shrinking-cog {
+    0% {
+        -webkit-transform: scale(1)
+    }
+    20% {
+        -webkit-transform: scale(1.2)
+    }
+    100% {
+        -webkit-transform: scale(0)
+    }
+}
+
+@-moz-keyframes shrinking-cog {
+    0% {
+        -moz-transform: scale(1)
+    }
+    20% {
+        -moz-transform: scale(1.2)
+    }
+    100% {
+        -moz-transform: scale(0)
+    }
+}
+
+@-o-keyframes shrinking-cog {
+    0% {
+        -o-transform: scale(1)
+    }
+    20% {
+        -o-transform: scale(1.2)
+    }
+    100% {
+        -o-transform: scale(0)
+    }
+}
+
+@keyframes shrinking-cog {
+    0% {
+        transform: scale(1)
+    }
+    20% {
+        transform: scale(1.2)
+    }
+    100% {
+        transform: scale(0)
+    }
+}
+
+.overlay-loader .loader-icon.shrinking-cog {
+    -webkit-animation: shrinking-cog .3s 1 ease forwards;
+    -moz-animation: shrinking-cog .3s 1 ease forwards;
+    -ms-animation: shrinking-cog .3s 1 ease forwards;
+    -o-animation: shrinking-cog .3s 1 ease forwards;
+    animation: shrinking-cog .3s 1 ease forwards;
+}
+
+
+
+
+
+
+
+
+
+#home {
+    
+//Give Differnt Color For every See all Button
+@each $div , $color in $see-all {
+    .#{$div} {
+        @include see-all($color);
+        @if #{$div} != "sa-events" {
+            margin: 30px 0 10px -10px;
+        }@else {
+            margin: auto ;
+        }
+            
+    }
+}
+    
+    
+    .item {
+        /* This Area until the ".overlay"  for the big signle layer*/
+        $item_image_height: 700px;
+        $mobile_item_image_height : 550px ;
+        //single layer style
+        left: 0;
+        width: 100%;
+        height: $item_image_height;
+        @include respond(xs,md){height: $mobile_item_image_height}
+        img {
+            height: $item_image_height;
+            width: 100vw;
+            @include respond(xs,md){height: $mobile_item_image_height}
+        }
+        .overlay {
+            @include overlay(fade-out($black, 0.3));
+        }
+        //////////////////////////////////////////////////////////
+        //The right Bottom message 
+        .message {
+            position: absolute;
+            bottom: 15%;
+            left: 0%;
+            width: 30%;
+            @include respond(xs, md) {
+                width: 70%
+            }
+            .message_same {
+                margin: 0;
+                font-weight: $regular;
+                font-size: 14px
+            }
+            h2 {
+                color: $white;
+                background: $light-blue;
+                padding: 15px 5px
+            }
+            h6 {
+                color: $black;
+                background: $white;
+                padding: 5px 2px;
+                width: 70%;
+            }
+        }
+        //the texture data that showen in the carousel caption area in the left top side in item 
+        .carousel-caption {
+            position: absolute;
+            left: 15%;
+            top: 22%;
+            height: 50%;
+            width: 60%;
+            text-align: left;
+            padding: 20px 40px;
+            background: fade-out($black, 0.9);
+            // For phones and tablets screens
+            @include respond(xs, md) {
+                width: 90%;
+                left: 5%;
+                top: 12%
+            }
+            //From There We start the header area with dynamic data about Quick message
+            header {
+                //H5 That Contain the name of team that responsable for this new 
+                h5 {
+                    @include h5($red, uppercase, 1, $semi-bold);
+                    letter-spacing: 1.2px;
+                    margin-bottom: 30px;
+                    width: 50%;
+                }
+                //H1 that conatin the head of news or evemt
+                h1 {
+                    @include h1($white, uppercase, 2);
+                    margin: 5px 0 10px;
+                    margin-bottom: 25px;
+                    @include respond(xs, md) {
+                        margin-top: 40px;
+                        margin-bottom: 20px
+                    }
+                }
+                //rule after h1 to make isolate betwwen heads
+                .rule {
+                    @include rule(60px, 3px, $green)
+                }
+                h4 {
+                    @include h4($white, capitalize, 1, $medium);
+                    width: 45%;
+                    margin-top: 5px;
+                }
+            }
+            a {
+                @extend %aside-button;
+                padding: 10px 15px;
+                border: 1px solid $red;
+                color: #FFF;
+                margin-top: 20px;
+                transition: all 1.4s ease-in-out;
+                @include transition(all .4s ease);
+                cursor: pointer;
+                &:hover {
+                    background: $red;
+                    color: $white;
+                    border-color: $red;
+                }
+            }
+        } //End Of Carousel Caption
+    }
+    #discover-us {
+        height: 200px;
+        padding: 40px 0;
+        margin-bottom: 40px;
+        @include respond(xs, md) {
+            min-height: 750px !important
+        }
+        header {
+            margin-bottom: 20px;
+            h2 {
+                @include h2($dim-blue, capitalize, 1.2)
+            }
+            .rule {
+                @include rule(50px, 5px, $green);
+                margin-left: 0.2%
+            }
+        }
+        figure {
+            @include transition(all 0.3s ease);
+            @include respond (xs, md) {
+                height: 250px
+            }
+            div {
+                @include respond(xs, md) {
+                    text-align: center
+                }
+            }
+            h5 {
+                @include h5($green, uppercase, 1, $medium)
+            }
+            p {
+                @include small-font($dim-blue)
+            }
+            &:hover h5 {
+                color: $red
+            }
+            &:hover {
+                cursor: pointer;
+                @include box-shadow(1px 1px 5px $light-gray)
+            }
+        }
+    }
+    #courses-search-engine {
+        @include border-radius(5px);
+        padding: 20px 15px 25px;
+        margin: 150px auto 20px;
+        @include respond(xs, lg) {
+            min-height: 500px
+        }
+        #up-event,
+        #find-course {
+            height: 250px
+        }
+        #up-event {
+            background: $green
+        }
+        #find-course {
+            background: $dim-blue
+        }
+        header {
+            margin-bottom: 15px;
+            h2 {
+                @include h2($white, capitalize, 1)
+            }
+            .rule {
+                @include rule(50%, 1px, fade-out($light-blue, 0.8));
+                margin-left: 24%
+            }
+        }
+        h5 {
+            @include h5($white, capitalize, 1.1, $semi-bold);
+            @include respond(lg, xl) {
+                margin-left: 25px
+            }
+        }
+        //        ul {
+        //            padding-right: 0
+        //        }
+        //        li {
+        //            font-size: 14px;
+        //            font-weight: $regular;
+        //            padding: 5px;
+        //            a,
+        //            i {
+        //                color: fade-out($white, 0.6)
+        //            }
+        //            i {
+        //                margin-right: 10px
+        //            }
+        //            a:hover {
+        //                color: $white;
+        //                cursor: pointer
+        //            }
+        //        }
+        form {
+            .form-group:first-child {
+                margin-bottom: 25px
+            }
+        }
+        #event-shortcut-data {
+            margin-top: 10px ;
+            * {
+                color: $white
+            }
+            h4 {
+                @include h4($white, capitalize, 1, $semi-bold)
+            }
+            #date {
+                @include date-module($white  , 52px , 52px , $dim-blue, $green );
+            }
+            .time {
+                &:frist-of-type {margin-top:10px}
+                * {
+                    display: inline-block ; 
+                    @include xs-small-font($white);
+                }
+                
+                i {
+                    margin-right: 5px ;
+                }
+                
+            }
+        }
+    }
+    #our-events {
+        min-height: 400px;
+        padding: 15px 0;
+        header {
+            margin-bottom: 30px;
+            h2 {
+                @include h2($dim-blue, capitalize, 1);
+                &:first-letter {
+                    @include h1($green, uppercase, 1.2)
+                }
+            }
+            .rule {
+                @include rule(50px, 5px, $green);
+                margin-left: 0;
+            }
+        }
+        .event-figure {
+            position: relative ;
+            overflow-x: hidden;
+            height: 350px;
+            padding: 15px;
+            @include respond(xs, lg) {
+                min-height: 350px;
+                margin-bottom: 30px
+            }
+            
+            //inheried
+            @mixin case {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: $white;
+                padding: 10px ;
+                @include xs-small-font($white);
+                z-index: 1;
+            }
+            
+           
+            
+            //Case Ux Styling
+            &.up-coming {
+                &::before {
+                    
+                    background: $red ;
+                    content: 'up-coming';
+                    @include case();
+
+                }
+            }
+            &.done{
+                &::before {
+                    content: 'done';
+                    background: $light-blue;
+                    @include case();
+
+            }
+            }
+            &.old {
+                &::before {
+                    content: 'Old';
+                    background: $dim-blue ;
+                    @include case();
+                }
+            }
+            
+            
+            img {
+                @include control-img(220px); 
+                border-bottom-left-radius: 0 ;
+            }
+            .overlay {
+                position: absolute;
+                top: 0 ;
+                left: -100%;
+                background: fade-out($dim-blue, 0.2);
+                display: flex;
+                @include transition(all 0.6s linear);
+                border-bottom-left-radius: 0 ;
+                a {
+                    margin: auto;
+                    display: inline-block
+                }
+                i {
+                    background: $dim-blue;
+                    color: $white;
+                    padding: 10px;
+                    @include border-radius(4px);
+                }
+            }
+            
+            
+            
+            .event-date {
+                @include date-module($green , 60px , 50px , $white , $white , 'bottom');
+                overflow: hidden ;
+                position: relative ;
+                margin-top: 0;
+                margin-left: 15px ;
+                padding-top: 10px ;
+                word-break: break-all ;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: -10px;
+                    left: 0;
+                    height: 10px;
+                    width: 10px;
+                    background: $green;
+                }
+            }
+            
+            h5 {
+                @include h5($dim-blue, capitalize, 1, $regular);
+                @include respond(xs , lg){margin-left: 20px}
+            }
+            span {
+                @include small-font($green);
+                i {
+                    margin: 0 5px 0 -5px
+                }
+            }
+            
+            
+            
+            &:hover .overlay {
+                left: 15px;
+                cursor: pointer
+            }
+        }
+    }
+    #latest-courses {
+        min-height: 600px;
+        padding: 40px 0;
+        background: $cold-gray;
+        header {
+            h2 {
+                @include h2($dim-blue, capitalize, 1.3)
+            }
+            .rule {
+                @include rule(80px, 4px, $green);
+                margin-left: 0%
+            }
+        }
+        ul {
+            margin-bottom: 50px
+        }
+        ul li {
+            background: $green;
+            padding: 8px 15px;
+            color: $white;
+            margin: 2px;
+            @include border-radius(3px);
+            &.active {
+                background: $red
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.9
+            }
+        }
+        figure {
+            height: 300px;
+            padding: 10px 10px;
+            float: left;
+            position: relative;
+            box-shadow: 1px 1px 3px $gray, -1px -1px 3px $gray;
+            -webkit-box-shadow: 1px 1px 3px $gray, -1px -1px 3px $gray;
+            -moz-box-shadow: 1px 1px 3px $gray, -1px -1px 3px $gray;
+            @include respond(lg, xl) {
+                width: 22%;
+                margin: 10px 1.5%
+            }
+            @include respond(xs, lg) {
+                height: 350px;
+                margin-bottom: 20px
+            }
+            @include transition(all 0.3s ease);
+            &:hover {
+                cursor: default
+            }
+            img {
+                width: 50%;
+                margin: 20px 25% 15px;
+                position: relative;
+                z-index: 2;
+                @include respond(xs, md) {
+                    width: 40%;
+                    margin: 20px 30% 15px
+                }
+            }
+            figcaption {
+                position: relative;
+                z-index: 2;
+                h5 {
+                    @include h5($dim-blue, capitalize, 1.1, $semi-bold);
+                    min-height: 30px;
+                    cursor: pointer;
+                    @include respond(xs, md) {
+                        text-align: center
+                    }
+                }
+                p {
+                    @include small-font($green)
+                }
+                i {
+                    margin: 0 3px
+                }
+            }
+            article {
+                z-index: 2;
+                h5 {
+                    @include h5($red, uppercase, 1.1, $semi-bold);
+                    a {
+                        color: $red
+                    }
+                }
+                h6 {
+                    @include h6($light-blue, uppercase, 1.1, $bold)
+                }
+            }
+            .upper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 35%;
+                background: $gray;
+                @include transition(all 0.3s ease);
+            }
+            .lower {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 65%;
+                width: 100%;
+                background: $white;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 100%;
+                    left: 0;
+                    background: $white;
+                    height: 0;
+                    width: 0;
+                    border: {
+                        style: solid;
+                        width: 50px 257px 0 0;
+                        color: $gray $white
+                    }
+                    @include respond(xs, md) {
+                        border-width: 50px 375px 0 0
+                    }
+                    @include transition(all 0.3s ease)
+                }
+            }
+            &:hover {
+                @include box-shadow(1px 1px 10px $dim-blue);
+            }
+            &:hover .upper {
+                background: $dim-blue
+            }
+            &:hover .lower::before {
+                border-color: $dim-blue $white
+            }
+        }
+    }
+    #home-hti-material {
+        min-height: 450px;
+        padding: 15px 0;
+        background: $cold-gray ;
+        header {
+            @extend %head-with-describe ;
+        }
+        .ma-con {
+            margin-top: 25px ;
+            height: 450px ;
+            
+        }
+        .hti-material-block {
+            min-height: 120px ;
+            border: 2px solid $gray ;
+            background: $white ;
+            @include transition(all 0.3s ease);
+            @include filter (blur(5px));
+            @include transform(translateY(25px));
+            &.slick-center {
+                @include transform(translateZ(80px)); 
+                @include transform(translateX(0.5px));
+                min-height: 400px ;
+                @include filter(blur(0px));
+                .material-describe {height: 80px}
+            }
+            
+            
+            figure {
+                margin-bottom: 5px ;
+                padding: 0 ;
+                position: relative ;
+                img {@include control-img(180px)}
+                figcaption {
+                    position: absolute ; 
+                    top: 0 ; 
+                    left: 0 ; 
+                    width: 60% ;
+                    background: $light-blue ;
+                    @include small-font($white);
+                    padding: 8px 6px ; 
+                    border-bottom-right-radius: 2px ;
+                    -webkit-border-bottom-right-radius : 2px ;
+                    -moz-border-bottom-right-radius : 2px ;
+                }
+            }
+            .material-describe-con {
+                margin: 5px 0 ;
+                padding: 15px ;
+                .material-describe-name {
+                    @include small-font(gray);
+                    i {color : $red}
+                }
+                .material-describe {
+                    @include xs-small-font($black);
+                    height: 50px ; 
+                    overflow: hidden ;
+                    margin-bottom: 15px ;
+                }
+                a {
+                    @include mid-page-block-btn($light-blue);
+                }
+            }
+        }
+    }
+    #news {
+        padding: 60px 0;
+        min-height: 500px;
+        @include respond(xs, sm) {
+            overflow-y: auto
+        }
+        header {
+            margin-bottom: 56px;
+            h2 {
+                @include h2($dim-blue, capitalize, 1);
+                &:first-letter {
+                    @include h1($green, uppercase, 1.2)
+                }
+            }
+            .rule {
+                @include rule(50px, 5px, $green)
+            }
+        }
+        figure {
+            height: 500px;
+            overflow-x: hidden;
+            padding: 15px;
+            @include transition(all 0.3s ease);
+            @include respond(xs, md) {
+                height: 500px;
+                margin-bottom: 20px;
+            }
+            .overlay {
+                background: fade-out($dim-blue, 0.2);
+                @include transition(all .6s linear);
+                position: absolute;
+                left: -120%;
+                top: 0px;
+                display: flex;
+                cursor: pointer;
+                i {
+                    color: $white;
+                    background: $dim-blue;
+                    padding: 10px;
+                    @include border-radius(4px);
+                    margin: auto;
+                    
+                }
+            }
+            figcaption {
+                h5 {
+                    @include h5($green, uppercase, 1, $regular);
+                    margin: 10px auto 0px -10px;
+                    i {margin : 5px  ; color: $dim-blue }
+                    @include respond(xs ,md){margin: 6px auto}
+                }
+                h4 {
+                    @include h4($dim-blue, uppercase, 1, $semi-bold);
+                }
+                p {
+                    @include small-font(fade-out(black, 0.2));
+                    max-height: 70px;
+                    overflow: hidden;
+                    @include respond(xs ,md){max-height: 50px}
+                }
+                a {
+                    @extend %aside-button;
+                    margin-top: 20px ;
+                    @include respond(xs,md){margin-left: 5px}
+                }
+            }
+            &:hover {
+                .overlay {
+                    left: 0px
+                }
+                @include box-shadow(2px 2px 4px $light-gray, -2px -2px 4px $light-gray);
+            }
+        }
+    }
+    #best-course {
+        height: 180px;
+        position: relative;
+        margin-top: 30px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: 45%;
+            background: $red;
+            height: 30px;
+            width: 5px;
+        }
+        //same style for left side and right side 
+        .best-same {
+            height: 130px;
+            padding-top: 10px
+        }
+        .left-side {
+            background: $dim-blue;
+            h4 {
+                @include h4($white, capitalize, 1, $bold)
+            }
+            p {
+                @include small-font($red)
+            }
+        }
+        .right-side {
+            background: $gray;
+            h5 {
+                @include h5($dim-blue, capitalize, 1, $bold);
+                margin-bottom: 10px
+            }
+            span {
+                color: $dim-blue;
+                i {
+                    margin: 4px 10px;
+                    color: $green
+                }
+                &:last-of-type {
+                    margin-bottom: 2px
+                }
+            }
+            a {
+                @extend %aside-button
+            }
+        }
+    }
+    #statices {
+        padding: 30px 10px;
+        margin: 40px 0;
+        height: 350px;
+        background: $cold-gray;
+        @include respond(xs, md) {
+            min-height: 1300px
+        }
+        figure {
+            height: 300px;
+            padding: 15px;
+            @include transition(all 0.3s ease);
+            @include respond(xs, md) {
+                min-height: 300px;
+                margin: 5px 0
+            }
+            span {
+                @include h2($dim-blue, uppercase, 1);
+                margin-top: 20px;
+                letter-spacing: 1.5px;
+                @include transform(scale(2.5, 1.4))
+            }
+            h5 {
+                @include h5($green, capitalize, 1, $medium)
+            }
+            //applay shadow on block when hoverd
+            &:hover {
+                @include box-shadow(1px 1px 8px $gray, -1px -1px 8px $gray)
+            }
+        }
+    }
+    #profs {
+        position: relative;
+        padding: 40px auto;
+        min-height: 500px;
+       
+        @include respond(xs,
+        md) {
+            min-height: 650px
+        }
+        header {
+            margin-bottom: 25px;
+            h2 {
+                @include h2($dim-blue,
+                capitalize,
+                1);
+                &:firts-letter {
+                    @include h1($green,
+                    uppercase,
+                    1)
+                }
+            }
+            .rule {
+                @include rule(40px,
+                4px,
+                $green)
+            }
+        }
+        #blog {
+            
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+            .image-overlay {
+                padding-right: 0 !important
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: -150%;
+                background: fade-out($dim-blue, 0.3);
+                display: inline-flex;
+                @include transition(all 0.3s ease);
+                @include border-left-radius(3px);
+                img {
+                    margin: auto;
+                    height: 40px;
+                    width: 40px
+                }
+            }
+            .mini-data {
+                height: 115px;
+                background: $cold-gray;
+                h5 {
+                    @include h5($dim-blue,
+                    capitalize,
+                    1,
+                    $medium);
+                    margin-bottom: 2px
+                }
+                h6 {
+                    @include h6($green,
+                    capitalize,
+                    1,
+                    $regular);
+                    i {
+                        margin-right: 5px
+                    }
+                }
+                figcaption {
+                    @include xs-small-font($black);
+                    max-height: 30px;
+                    overflow: hidden
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -8px;
+                    bottom: 30px;
+                    height: 0;
+                    width: 0;
+                    border-color: transparent $cold-gray;
+                    border-style: solid;
+                    border-width: 8px 8px 8px 0;
+                }
+            }
+            &:hover {
+                @include box-shadow(1px 1px 5px $light-gray);
+                .overlay {
+                    left: 15px;
+                    cursor: pointer
+                }
+            }
+        }
+        .prof {
+            border: 3px solid $cold-gray;
+            @include border-radius(5px);
+            height: 350px;
+            padding-top: 30px !important;
+            background: url('../media/profback.gif') no-repeat center center fixed ;
+            h4 {
+                @include h4($dim-blue,
+                uppercase,
+                1,
+                $semi-bold)
+            }
+            h5 {
+                @include h5($red,
+                capitalize,
+                1,
+                $medium)
+            }
+            figcaption {
+                @include xs-small-font($black)
+            }
+            .prof-social {
+                margin-top: 15px;
+                li {
+                    margin-right: 5px;
+                    a {
+                        color: $gray
+                    }
+                    i {
+                        cursor: pointer
+                    }
+                    &:first-child:hover i {
+                        color: $facebook-color
+                    }
+                    &:nth-child(2):hover i {color : $twitter-color}
+                    &:nth-child(3):hover i {color : $linkedIn-color}
+                    &:last-child i {color : $youtueb-color}
+                }
+            }
+            &:hover {box-shadow: 2px 2px 5px fade-out($cold-gray , 0.5)}
+        }
+    }
+} //<!-- Home End -->
+//////////////////////////////////////////////___________+________________________________________________________________________________________________//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//ContactUs FullStyled ...
+#contact-us {
+    //Contact-With-Us-Message 
+    #contact-us-describe {
+        position: relative;
+        z-index: -1;
+        background-color: $white;
+        color: $light-blue;
+        min-height: 480px;
+        overflow: auto;
+        padding-top: 25px;
+        @include transition(all .3s ease);
+        @include respond (xs,
+        sm) {
+            min-height: 520px;
+            padding-top: 0;
+        }
+        &:hover {
+            @include box-shadow(1px 1px 5px $cold-gray)
+        }
+        h3 {
+            @include h3($dim-blue,
+            uppercase,
+            2);
+            margin-top: 100px;
+            color: $dim-blue;
+        }
+        .rule {
+            @include rule(50px,
+            5px,
+            $red);
+        }
+        p {
+            @include custom(fade-out($black,
+            0.2),
+            capitalize,
+            1.1px,
+            1.2,
+            $medium,
+            4.2);
+            @include respond(xs,
+            md) {
+                margin: 10px 0 15px
+            }
+        }
+        .arrow {
+            background: $dim-blue;
+            border-radius: 50%;
+            @extend %text-center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -5%;
+            cursor: pointer;
+            z-index: 9999;
+            color: $white;
+            @include animation(moveUpDown .3s linear infinite forwards alternate);
+            i {
+                padding: 0 6px;
+                font-size: 16px;
+            }
+            @keyframes moveUpDown {
+                0% {
+                    margin-top: 6%
+                }
+                100% {
+                    margin-top: 7%
+                }
+            }
+        }
+    }
+    .curve {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            left: 0;
+            height: 0;
+            bottom: 100%;
+            border-left: 100vw solid transparent;
+            border-bottom: 140px solid $dim-blue;
+        }
+    }
+    //Contact Form Area 
+    #contact-form {
+        padding: 20px 0 40px;
+        overflow: hidden;
+        background: $dim-blue;
+        $input-colors: fade-out($black, 0.2);
+        header {
+            @extend %text-center;
+            margin-bottom: 40px;
+            h2 {
+                @include h2($white,
+                uppercase,
+                1.5);
+                &:first-letter,
+                strong {
+                    color: $red;
+                    font-size: 55px
+                }
+            }
+            span.rule {
+                @include rule (50px,
+                5px,
+                $red)
+            }
+        }
+        label {
+            margin-bottom: 5px;
+            @extend %label-font;
+        }
+        input {
+            border: 1px solid $dim-blue;
+            @include border-radius (2px);
+            height: 40px;
+            background: $input-colors;
+            margin-bottom: 5%;
+            @include input-font($white)
+        }
+        textarea {
+            @include border-radius(2px);
+            margin-top: 1%;
+            height: 215px;
+            width: 100%;
+            resize: vertical;
+            margin-bottom: 40px;
+            border: 1px solid $dim-blue;
+            background: $input-colors;
+            padding: 10px;
+            font: {
+                size: 12px;
+                weight: $bold;
+            }
+            color: $white;
+        }
+        #char-counter {
+            color: $white;
+            margin-bottom: 0;
+        }
+        #send-feedback-btn {
+            border: none;
+            width: 60%;
+            margin-left: 25%;
+            height: 45px;
+            background-color: fade-out($black, 0.1);
+            color: $white;
+            text-transform: uppercase;
+        }
+        //Show and Hide pass Button
+        .form-group:last-child input {
+            width: 90%
+        }
+        #show-pass {
+            display: inline-block;
+            width: 10%;
+            height: 38px;
+            color: $white;
+            background: $input-colors;
+            text-align: center;
+            line-height: 38px;
+            float: left;
+            margin-top: 25px;
+            @include border-radius(2px)
+        }
+    }
+    //Map 
+    #map-con {
+        position: relative;
+        min-height: 500px;
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+        ul {
+            position: absolute;
+            z-index: 2;
+            color: $white;
+            li {
+                font: {
+                    size: 15px;
+                    weight: $medium
+                }
+                padding: 19px 30px;
+                margin: 5px 10px;
+            }
+        }
+        ul:first-of-type {
+            background: fade-out($light-blue, 0.3);
+            top: 0%;
+            right: 5%;
+            padding: 5px 10px;
+            h4 {
+                @include h4($white,
+                uppercase,
+                1,
+                $semi-bold);
+                margin-left: 5%
+            }
+            li {
+                border-bottom: 1px solid $white;
+                @include transition(all 0.3s linear);
+                @include border-bottom-radius(2px);
+                span {
+                    margin-right: 15px
+                }
+                &:last-child {
+                    border-bottom: none
+                }
+                &:hover {
+                    background: $light-blue;
+                    border: none
+                }
+            }
+            p {
+                margin-left: 5%;
+                padding: 2px
+            }
+        }
+        ul:last-of-type {
+            position: absolute;
+            bottom: 0;
+            left: 2%;
+            background: $dim-blue;
+            height: 50%;
+            li:nth-child(1) i {
+                color: $red
+            }
+            li:nth-child(2) i {
+                color: $green
+            }
+            li:nth-child(3) i {
+                color: $light-blue
+            }
+        }
+    }
+}
+
+////////////////////////////__________________________________________________________________////////////////////////////////////////////////////////////________________________________________________________________________//////////////////////////////////////
+///////////////////////////////////////////////////-------------------------------------------------------------///////////////////////////////////////////////////////////-------------------------------------------------///////////////////////////////////
+//Gallery Full styled
+#Gallery {
+    $primary-color: fade-out($red, 0.5);
+    background: black;
+    overflow-x: hidden;
+    height: 2000px;
+    main {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        .container-fluid {
+            width: 1330px;
+            padding: 0
+        }
+        #lower-nav {
+            @include respond(xs,
+            md) {
+                text-align: center;
+                float: none
+            }
+            background: $dim-blue;
+            h2 {
+                @include h2 ( $white,
+                uppercase,
+                1.2);
+                font-size: 18px;
+                &:first-letter {
+                    font-size: 35px;
+                    color: $red
+                }
+                padding: 0 2px 2px;
+                margin: 3.5px 0 0;
+            }
+            .btn-group {
+                height: 100%;
+                background: $dim-blue;
+                border: none;
+                color: $white;
+                button {
+                    background: none;
+                    border: none;
+                    padding: 5px 10px
+                }
+            }
+        }
+        #root-con {
+            height: 200px;
+        }
+        article {
+            position: relative;
+            min-height: 350px;
+            overflow: hidden;
+            //            media
+            @include respond (xs,
+            sm) {
+                min-height: 500px;
+            }
+            .overlay {
+                @include overlay($white);
+                padding: 40px 0 20px
+            }
+            h1 {
+                @include h1($dim-blue,
+                uppercase,
+                1.2);
+            }
+            .rule {
+                @include rule(50px,
+                5px,
+                $green);
+                margin-left: 1%
+            }
+            p {
+                @extend %page-intro;
+            }
+            img {
+                margin-top: -10%
+            }
+        }
+        section {
+            height: 720px;
+            figure {
+                $se-edition: ( top: 0%, left: 0%, width: 100%, height: 100%);
+                overflow: hidden;
+                height: 280px;
+                position: relative;
+                &:nth-child(1) {
+                    height: 550px;
+                }
+                img {
+                    position: absolute;
+                    top: map-get($se-edition, top);
+                    left: map-get($se-edition, left);
+                    height: map-get($se-edition, height);
+                    width: map-get($se-edition, width);
+                    @include filter(blur(1px));
+                    @include transition(all 0.6s ease)
+                }
+                h4 {
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    left: 4%;
+                    z-index: 3;
+                    text-align: left;
+                    @include h4($white,
+                    uppercase,
+                    1.3,
+                    $regular);
+                    @include transition(all 0.4s ease);
+                    background: fade-out(#8FCF00, 0.5);
+                    padding: 5px 10px 10px;
+                    &:first-letter,
+                    span:first-letter {
+                        color: $red;
+                        font-size: 22px;
+                    }
+                }
+                h5 {
+                    display: inline-block;
+                    position: absolute;
+                    top: 58%;
+                    left: 0%;
+                    text-align: left;
+                    @include h5(black,
+                    uppercase,
+                    1.1,
+                    $semi-bold);
+                    background: $white;
+                    padding: 5px 10px 10px;
+                }
+                .controls {
+                    position: absolute;
+                    top: 40%;
+                    left: -80%;
+                    height: 80px;
+                    width: 100%;
+                    text-align: center;
+                    z-index: 2;
+                    @include transition(all 0.7s linear);
+                    i {
+                        background: fade-out($red, 0.2);
+                        color: $white;
+                        padding: 10px;
+                        @include border-radius(2px);
+                        cursor: pointer;
+                        &:hover {
+                            background: fade-out($red, 0)
+                        }
+                    }
+                }
+                p {
+                    z-index: 2;
+                    position: absolute;
+                    bottom: -100%;
+                    left: 4%;
+                    width: 96%;
+                    height: 60px;
+                    color: $white;
+                    @include transition(all 0.2s linear);
+                }
+                figcaption {
+                    position: absolute;
+                    top: -105%;
+                    @include transition(all 0.3s linear);
+                    color: $white;
+                    background: fade-out(black, 0.2);
+                }
+                &:hover .controls {
+                    left: 0%
+                }
+                &:hover figcaption {
+                    @extend img
+                }
+                &:hover p {
+                    bottom: 0%
+                }
+                &:hover h4 {
+                    background: none;
+                    top: 10%;
+                    left: 35%
+                }
+                &:hover img {
+                    @include filter(blur(5px));
+                    @include transform(scale(1.5) rotate(10deg))
+                }
+            }
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////-------------------------------------------------------------------------------------
+//About Us FullStyled
+#about-us {
+    //Word From Hti-president
+    #bio-info {
+        min-height: 350px;
+        position: relative;
+        padding: 40px 0 20px;
+        h2 {
+            @include h2($dim-blue,
+            uppercase,
+            1.2)
+        }
+        .rule {
+            @include rule(50px,
+            5px,
+            $green)
+        }
+        p {
+            @include custom(fade-out($black,
+            0.2),
+            capitalize,
+            1.1px,
+            1.2,
+            $medium,
+            4.4);
+            @include respond(xs,
+            md) {
+                margin: 10px 0 15px
+            }
+            margin-top: 50px;
+        }
+        figure {
+            @include respond(xs,
+            md) {
+                margin-top: 50px
+            }
+            h3 {
+                @include h3($red,
+                uppercase,
+                1.2)
+            }
+            p {
+                margin-top: 0
+            }
+        }
+    }
+    .info {
+        position: relative;
+        min-height: 500px;
+        padding: 40px 0;
+        @include respond(xs,
+        md) {
+            min-height: 750px;
+            margin-bottom: 30px;
+            text-align: center
+        }
+        header {
+            h3 {
+                @include h3($dim-blue,
+                uppercase,
+                1.3)
+            }
+            p {
+                @extend %page-intro;
+                margin-top: 0;
+                color: $red
+            }
+            .rule {
+                @include rule(50px,
+                5px,
+                $green)
+            }
+        }
+        p {
+            @extend %page-intro;
+            color: fade-out($black, 0.2);
+        }
+        &.infoWoverlay {
+            position: relative;
+            background: {
+                image: url('../media/student-with-laptop.jpg');
+                repeat: no-repeat;
+                position: center top;
+                attachment: fixed;
+            }
+            @include background-size(cover);
+            header {
+                h3 {
+                    @include h3($white,
+                    uppercase,
+                    1.3)
+                }
+            }
+            .overlay {
+                @include overlay(fade-out($dim-blue,
+                0.1));
+                padding: 40px 0 0;
+            }
+            p {
+                color: $gray
+            }
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////-------------------------------------------------------------------
+//outer Courses,blogs,events Area FullStyled  
+#events,
+#blogs,
+#courses,
+#news,
+#materials {
+    @extend %static_container_for_data;
+} //upper pagnation lower pagnitaion and main con and side bar
+
+
+
+%blog-header {
+    h4 {
+        @include h4($dim-blue,
+        capitalize,
+        1,
+        $semi-bold)
+    }
+    h6 {
+        @include h6($green,
+        uppercase,
+        1,
+        $medium);
+        span {
+            margin: 5px 0 5px 5px;
+            i {
+                margin-right: 5px ;
+                color: $gray
+            }
+        }
+    }
+}
+
+  
+
+#events,
+#blogs,
+#news,
+{
+    figure {
+        &:first-child {
+            margin-top: 20px
+        }
+        padding: 0;
+        margin-bottom: 50px;
+        overflow: hidden;
+        @include transition(all 0.3s linear);
+        .image-overlay {
+            position: relative;
+            padding-right: 0;
+            @include border-left-radius(5px);
+            @include transition(all 0.6s linear);
+            img {
+                @include control-img(260px);
+                @include respond(xs,
+                md) {
+                    @include control-img(200px)
+                }
+            }
+            .overlay {
+                background: fade-out($dim-blue, 0.2);
+                position: absolute;
+                top: 0;
+                left: -150%;
+                display: flex;
+                @include transition(all 0.6s linear);
+                a {
+                    margin: auto;
+                    display: inline-block
+                }
+                i {
+                    cursor: pointer;
+                    color: $white;
+                    padding: 10px;
+                    background: $dim-blue;
+                    &:hover {
+                        opacity: 0.8
+                    }
+                }
+            }
+        }
+        //height , width , border
+        .date {
+            @include date-module($green , 60px , 50px , $white , $white , 'right');
+            padding-top: 5px ;
+        }
+        .data {
+            @extend %blog-header
+        }
+        figcaption {
+            @include xs-small-font($black);
+            max-height: 120px;
+            margin-bottom: 15px
+        }
+        a.go-inner {@include mid-page-block-btn($dim-blue)}
+        &:hover {
+            @include box-shadow(1px 1px 5px $light-gray);
+            .overlay {
+                left: 15px
+            }
+        }
+    }
+    //    aside {@extend %common-aside}
+} // The same figure style for all block in those pages 
+
+
+#materials {
+    //left side of page
+    .hti_material_figure {
+        background: fade-out($light-gray , 0.8);
+        height: 380px;
+        @include transition(all 0.4s ease-in-out);
+        padding: 8px !important ;
+        margin: 15px auto ;
+        figure {
+            position: relative;
+            img {
+                @include control-img(200px);
+                @include border-radius(2px);
+            }
+            figcaption {
+                background: $light-blue;
+                position: absolute;
+                bottom: 25px;
+                left: 0;
+                padding: 10px;
+                border-top-right-radius: 2px ;
+                -webkit-border-top-right-radius: 2px ;
+                -moz-border-top-right-radius: 2px ;
+                -ms-border-top-right-radius: 2px ;
+                @include small_font($white);
+                @include respond(xs,md) {width: 75%}
+            }
+            div {
+                background: $white;
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                padding: 5px;
+                @include xs-small-font($black);
+                @include respond(xs,md) {width: 50%}
+            }
+        }
+        .data {
+            h5 {@include h5($dim-blue,capitalize,1,$semi-bold)}
+            
+            .material-single-info {
+                position: relative ;
+                margin-left: 15px ;
+                &::before {
+                    content:'';
+                    position: absolute ;
+                    top: 35% ;
+                    left: -15px ;
+                    height: 10px ;
+                    width: 10px ;
+                    background: $green ;
+                    @include border-radius(50%);
+                }
+                span{
+                @include small-font($black);
+            }
+                p {
+                @include small-font($green);
+                display: inline-block;
+                margin: 2px ;
+                &:last-of-type {
+                    text-transform: uppercase
+                }
+            }
+            }
+            a {
+                margin-top: 25px ;
+                @include mid-page-block-btn($dim-blue);
+                @include transition(all 0.3s ease);
+
+                &:hover {
+                    cursor: pointer ;
+                    opacity: 0.9 ;
+                }
+            }
+        }
+        &:hover {
+            @include box-shadow(2px 2px 5px $light-gray , -2px -2px 5px $light-gray);
+        }
+    }
+}
+
+#courses {
+    //Things List
+    .common-list {
+        figure {
+            &:first-child {
+                margin-top: 20px
+            }
+            padding: 0;
+            margin-bottom: 50px;
+            overflow: hidden;
+            height: 250px;
+            @include box-shadow(0 2px 5px $light-gray);
+            @include transition(all .3s ease);
+            @include respond(xs,
+            md) {
+                min-height: 450px
+            }
+            &:hover {
+                @include box-shadow(0 4px 12px $light-gray)
+            }
+            .image-overlay {
+                img {
+                    height: 250px;
+                    max-width: 100%;
+                    display: block;
+                    @include respond(xs,
+                    md) {
+                        @include control-img(200px)
+                    }
+                }
+                position: relative;
+                padding-right: 0;
+                @include border-left-radius(5px);
+                @include transition(all 0.6s linear);
+                .overlay {
+                    background: fade-out($dim-blue, 0.2);
+                    position: absolute;
+                    top: 0;
+                    left: -150%;
+                    display: flex;
+                    @include transition(all 0.6s linear);
+                    cursor: pointer;
+                    a {
+                        margin: auto;
+                        display: inline-block
+                    }
+                    i {
+                        color: $white;
+                        padding: 10px;
+                        &:hover {
+                            opacity: 0.8
+                        }
+                    }
+                }
+            }
+            &:hover .overlay {
+                left: 15px
+            }
+            
+            .data {
+        height: 100%;
+        i {
+            margin-right: 5px
+        }
+    }
+    h4:first-of-type {
+        @include h4($dim-blue,
+        capitalize,
+        1,
+        $medium);
+        margin-top: 40px
+    }
+    h6 {
+        @include h6($green,
+        uppercase,
+        1,
+        $semi-bold);
+    }
+    figcaption {
+        @include xs-small-font($black);
+        max-height: 50px;
+        overflow: hidden;
+    }
+    h4:last-of-type {
+        @include h4($red,
+        uppercase,
+        1,
+        $medium);
+        margin-bottom: 10px
+    }
+    h5 {
+        @include small-font($black)
+    }
+        }
+        //lower npagenation slider 
+    }
+    
+}
+
+////////////////////////////////////////////////////////////////////////*************************************----------------------------------
+//inner Courses,blogs,events Area FullStyled 
+.detailed-con {
+    //Extend Static Pieces Form Control.scss
+    .detailed-list {
+        @extend %detailed-list
+    }
+    .detailed-image {
+        @include detailed-image('notnew');
+    }
+    .detailed-image-new {
+        @include detailed-image('new');
+    }
+    
+    
+    height: auto;
+    margin-top: 15px;
+    
+    
+    
+    .show-case {
+        margin-top: 50px;
+        border: 1px solid $light-gray;
+        @include border-radius(3px);
+        padding: 15px;
+        header {
+            @extend %header
+        }
+        h4,
+        .show-case-body {
+            margin-left: 1.5%;
+            @include small-font($dim-blue)
+        }
+    }
+    .content-details {
+        ul {
+            list-style: circle;
+            margin-left: 5%
+        }
+        figcaption,
+        li {
+            @include xs-small-font($dim-blue)
+        }
+        li {
+            &:first-child {
+                margin-top: 20px
+            }
+            padding: 5px 10px;
+        }
+    }
+    .event-time {
+        span {
+            @include xs-small-font($dim-blue);
+            background: $cold-gray ;
+            display: inline-block ;
+            padding: 10px 8px ;
+            margin: 2px 5px ;
+            border: 1px solid $cold-gray ;
+            @include border-radius(4px);
+            i {
+                color: $green;
+                margin-right: 8px;
+            }
+        }
+    }
+    .event-locate {
+        span {
+            margin-bottom : 15px ;
+        }
+        img {
+            border: 1px solid $cold-gray ;
+            @include control-img(200);
+            width: 400px;
+        }
+    }
+    .speakers-slider {
+        border: none;
+        .slide {
+            padding-top: 30px;
+            border: 2px solid $light-gray;
+            min-height: 400px;
+            @include border-radius(3px);
+            img {
+                margin-bottom: 20px;
+                height: 110px
+            }
+            h4 {
+                @include h4($green,
+                uppercase,
+                1,
+                $semi-bold)
+            }
+            h6 {
+                @include h6($dim-blue,
+                uppercase,
+                1,
+                $medium)
+            }
+            p {
+                @include xs-small-font(fade-out($dim-blue,
+                0.1))
+            }
+            ul {
+                @include social-media(auto)
+            }
+        }
+    }
+    .instructor-data {
+        .data {
+            @include respond(xs,md) {text-align: center}
+            header {
+                margin-bottom: 10px;
+                @include respond(xs,md){text-align: center ; margin-bottom: 5px}
+                h4 {@include h4($green,uppercase,1,$medium)}
+                h5 {@include h5($dim-blue,capitalize,1,$regular)}
+            }
+            .social-media {@include social-media(10px)}
+        }
+        
+        figcaption {
+            @include small-font(fade-out($black,
+            0.2))
+        }
+    }
+    #feed-back {
+        
+        .user-comment {
+            margin-bottom: 15px ;
+        }
+        
+        
+        .comment-header {
+            margin: 5px 10px 10px 5px ;
+            .user-image {
+                 display: inline-block ;
+                 height: 80px ; 
+                 width: 80px ;
+                 margin-left: 10px ;
+                 @include border-radius(50);
+                 padding: 0 ;
+            }
+            .comment-info {
+                margin-top: 10px ;
+	            h5 {
+                    @include h5($white , capitalize , 1 , $semi-bold);
+                    background: $dim-blue ;
+                    padding: 2px 6px ;
+                        }
+                h6 {
+                    @include h6($white , capitalize , 1 , $medium);
+                    background: $green ;
+                    padding: 2px 4px ;
+                    }
+                .rule { @include rule(120px , 3px , $cold-gray)}
+            }
+           
+        }
+        
+        .comment-body {
+	        background: $cold-gray ;
+            @include border-radius(8px);
+            position: relative ;
+            &::before {
+                content: '';
+                position: absolute ;
+                top: -20px ; 
+                left: 25px ;
+                height: 0 ; width: 0 ;
+                border: {
+                    color : $cold-gray transparent;
+                    width: 0 10px 20px 10px ;
+                    style : solid ;
+                }
+                }
+            
+            p {
+                @include small-font($black);
+                text-shadow : 0.5px 0.5px 3px fade-out($black , 0.5);
+                padding: 15px ;
+                margin-left: 1% ;
+
+            }
+        }
+        
+        .comment-control {
+                .comment-control-btn {
+	               @include xs-small-font($dim-blue);
+                }
+                .comment-time {
+                background: $gray ;
+                margin : 15px 5px 2px 20px ;
+                @include xs-small-font($white);
+                padding: 5px ;
+            }
+            }
+        
+       
+       
+        label {
+            @include small-font($dim-blue)
+        }
+        #add-comment {
+            @extend %aside-button
+        }
+    }
+    
+    
+    #blog-detailed {
+        .blog-header {
+            @extend %blog-header
+        }
+        
+        .blog-content {
+            .block {
+                margin: 15px auto;
+                @include xs-small-font($black)
+            }
+            h3 {
+                @include h3($red,
+                capitalize,
+                1)
+            }
+            h5 {
+                @include h5($dim-blue,
+                uppercase,
+                1,
+                $medium)
+            }
+            .rule {
+                @include rule(500px,
+                1px,
+                $light-gray);
+                margin-left: 0.4%
+            }
+            .wisdom {
+                margin: 20px auto;
+                span {
+                    @include h2($gray,
+                    uppercase,
+                    1.2);
+                    border-right: 2px solid $gray
+                }
+                figcaption {
+                    @include h5($dim-blue,
+                    capitalize,
+                    1,
+                    $semi-bold)
+                }
+            }
+            li {
+                @extend %tag-filter;
+                &.static i {
+                    color: $red
+                }
+            }
+        }
+        
+        
+    }
+    #writer-detailed {
+        header {
+            @extend %header
+        }
+        margin-top: 50px;
+        .writer-name {@include h4($dim-blue , capitalize , 1 , $semi-bold)}
+        .writer-bio {@includ xs-small-font($black)}
+        .writer-social {
+                @include social-media(auto)
+            }
+        }
+    .code {
+        padding: 6px 9.5px;
+        border: none;
+        border-left: 2px solid $black;
+        margin: 15px auto;
+        @include border-radius(0);
+        header {
+            background: $white;
+            @include small-font($red);
+            padding: 2px 4px;
+            margin: 10px auto;
+        }
+        p {
+            color: $dim-blue
+        }
+    }
+    .tags li {
+        margin-top: 25px ;
+        margin-right: 4px;
+        @extend %tag-filter ; 
+        margin-bottom: 0 ;
+        &:first-child {
+            background: $red ; 
+            color: $white; 
+        }
+    }
+    .header {
+        h4 {  @include h4($dim-blue, capitalize, 1,$semi-bold)}
+        h6 {@include h6($green , uppercase, 1 ,$medium);
+        span {
+            margin: 5px;
+            i {
+                margin-left: 3px;
+                color: $gray
+            }
+        }
+    }
+    }
+    .date {
+        @include date-module($green , 58px , 50px , $white , $white , 'bottom');
+    }
+    
+    .source-list-item {
+        position: relative ;
+        display: block ;
+        margin-left: 20px ;
+        @include small-font($black);
+        &::before {
+            content: '';
+            position: absolute ;
+            top: 30% ; 
+            left: -15px ;
+            height: 10px ;
+            width: 10px ;
+            background: $red ;
+            @include border-radius(50%);
+        }
+    }
+    .material-describe{
+        background: fade-out($cold-gray , 0.4);
+        @include xs-small-font($black);
+        height: 200px ;
+        @include transition(all 0.3s ease-in-out);
+        border: 1px solid $cold-gray ;
+        @include respond(xs,md){height: 400px}
+        &:hover {
+            @include box-shadow(2px 2px 5px $cold-gray , -2px -2px 5px $cold-gray );
+        }
+        figure {
+            position: relative ;
+            img {
+                @include control-img(200px);
+            }
+            figcaption {
+                position: absolute ;
+                bottom: 0 ; 
+                left: 0 ; 
+                padding: 8px 10px ;
+                background: $light-blue ;
+                @include small-font($white);
+            }
+        }
+        article {
+            header {@extend %header ; margin-bottom: 0 !important}
+            p {@include small-font($black)}
+        }
+        
+    }
+    #add-material {
+        position: fixed ;
+        min-height: 1px;
+        width: 15% ;
+        bottom: 0 ;
+        right: 35px ;
+        z-index: 9999 ;
+        @include respond(xs,md){width: 40%}
+        header {
+            position: relative ;
+            min-height: 25px ;
+            background: $light-blue ;
+            @include small-font($white);
+            padding: 8px 15px 6px 10px ;
+            border-top-right-radius: 3px ;
+            cursor: pointer;
+            @include transition (slideUp 0.3s ease);
+            -webkit-border-top-right-radius: 3px ;
+            -moz-border-top-right-radius: 3px ;
+            -ms-border-top-right-radius: 3px ;
+            i {margin-top : 2px }
+        }
+        form {
+            display: none;
+            position: relative ;
+            background: $cold-gray ;
+            width:  100%;
+            height: 185px ;
+            border: 1px solid fade-out($cold-gray , 0.3);
+            @include border-bottom-radius(2px);
+            .piece {
+                margin: 18px auto ;
+            }
+            #send-material i {color: $white}
+        }
+    }
+}
+
+
+//Navgation Buttons 
+.nav-btn {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    @extend %button-reset;
+    @include transition (fade 0.3s ease-in-out);
+    @include small-font($white);
+    opacity: 0.8;
+    i { margin: auto;}
+    &:hover {
+        opacity: 1 ;
+        cursor: pointer ;
+    }
+    
+    
+    &#move-down {
+        background: $dim-blue ;
+        width: 35px;
+        height: 35px;
+        @include border-radius(50%);
+        bottom: 5%;
+        left: 47.5%;
+        @include respond(xs,md) {
+            bottom: 1%;
+            left: 1%
+        }
+    }
+    
+    
+}
+
+ #move-up{
+        @include border-radius(2px);
+        background: $red;
+        width: 50px;
+        height: 50px;
+        bottom: 10%;
+        right: 2%;
+}

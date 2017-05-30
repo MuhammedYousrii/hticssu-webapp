@@ -1,0 +1,380 @@
+//Responsove Mixins 
+//For Dynamix Responsive
+@mixin respond($min-size , $max-size){
+    @media screen and (min-width: map-get($breakpoints , $min-size)) and (max-width : map-get($breakpoints , $max-size))
+    {
+        @content ;
+    }
+} 
+
+
+
+
+
+
+
+//My Own Mixins 
+@mixin rule ( $width , $height , $background){
+    background: $background ;
+    height: $height ;
+    width : $width  ;
+    display: inline-block ;
+    margin: 10px auto 10px -10% ;
+    @include border-right-radius(5px);
+    margin-left: 1% ;
+}
+@mixin overlay ($background){
+    position: absolute ; 
+    top: 0 ; 
+    left: 0 ; 
+    min-height: 100% ; 
+    min-width: 100% ;
+    background: $background ;
+}
+@mixin event-date($height , $width , $border){
+    position: relative ;
+    text-align: center ;
+    background: $green ;
+    width: $width ;
+    height: $height ;
+    margin-top: 0 ;
+    font-size: 18px ;
+    font-weight: $regular ;
+    color: $white ;
+    line-height: 1.2 ;
+    padding: 5px ;
+    @if $border == 'right' {
+        @include border-right-radius(4px);
+        }
+    @else {
+        @include border-bottom-radius(4px)
+    }
+        
+}
+@mixin control-img($height) {
+    display: block ;
+    width: 100% ;
+    height: $height
+}
+@mixin social-media ($padd) {  
+        padding-top: $padd ;
+        li {
+            @include transition(all .3s ease);
+                   margin: 0 6px ;
+                   padding: 10px ;
+                   a{@extend %a-reset}
+                   i {color: $gray ; cursor: pointer}
+                   &:first-child:hover  {background-color: $facebook-color}
+                   &:nth-child(2):hover  {background-color: $twitter-color}
+                   &:last-child:hover  {background-color: $linkedIn-color}
+                   &:hover i {color: $white }
+        }
+    }
+@mixin own-control(){
+    .own-control {
+	   width: 75% ;
+        @include border-right-radius(0);
+        display: inline-block;
+        margin-right: 0 ;
+    }
+    
+    button {
+        width: 23% ;
+        @include border-left-radius(0);
+    }
+}
+@mixin date-module($container-background , $height , $width , $span-color , $caption-color , $border-type : default){
+    //aligmnet elemnets in center of figure con
+    * {margin: 1px auto}
+    position: relative ;
+    text-align: center ;
+    background: $container-background ;
+    padding: 5px 15px 15px 15px ;
+    height: $height ;
+    width: $width ;
+    
+    @if $border-type == default {
+        @include border-radius(3px);
+    }
+    @else if $border-type == 'right' {
+        @include border-right-radius(3px);
+        }
+    @else {
+        @include border-bottom-radius(3px)
+    }
+    
+    
+    span {
+        @include h5($span-color , capitlaize , 1 , $semi-bold);
+    }
+    figcaption {@include h6($caption-color , capitalize , 1 , $medium) }
+    
+}
+@mixin head-control($p-des:false){
+    margin-bottom: 30px;
+    h2 {
+            @include h2($dim-blue, capitalize, 1);
+            &:first-letter {
+                @include h1($green, uppercase, 1.2);
+            }
+        }
+    .rule {
+            @include rule(50px, 5px, $green);
+            margin-left: 0;
+        }
+    @if $p-des == true {
+        p {@include small-font($dim-blue)}
+        .rule {@include rule(50px , 3px , $green)}
+    }
+}
+@mixin detailed-image($type){
+    //Event Image With Ovelay With it's name
+        position: relative;
+        padding-right: 0;
+        padding-left: 0;
+        height:250px ; 
+        &::before,
+        &::after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            top: 80%;
+            max-width: 300px;
+            background: $light-gray;
+            @include box-shadow(0 10px 10px $light-gray);
+            @include transform(rotate(-5deg));
+        }
+        &::after {
+            @include transform(rotate(5deg));
+            right: 10px;
+            left: auto;
+        }
+    
+    
+    
+        img {
+            @if $type == 'new' {
+                @include control-img(300px);
+            }
+            @else {
+                @include control-img(250px);
+            }
+        }
+        h4,
+        h5 {
+            position: absolute;
+            z-index: 1 ;
+            left: 0% ; 
+            @inclue transition(all 0.8s linear);
+        }
+    
+        h4 {
+            @include h4($white,capitalize,1,$regular);
+            background: $light-blue;
+            bottom: 8%;
+            padding: 10px 8px;
+            border: 1px solid $light-blue ;
+            @include border-right-radius(2px);
+        }
+        h5 {
+            @include h5($black,
+            uppercase,
+            1,
+            $regular);
+            background: $white;
+            bottom: -2%;
+            padding: 8px 4px;
+        }
+        .overlay {
+	       position: absolute ; 
+           top: 0 ; 
+           left: -150% ; 
+           background: fade-out($dim-blue , 0.4 ) ;
+           @include transition(all 0.3s linear);
+           display: flex ;
+            @include respond(xs,md){left: -300%}
+            a{margin: auto ; display: inline-block}
+            i{
+                color: $white ;
+                padding: 10px ; 
+                background: $dim-blue
+            }
+        }
+        &:hover {
+            .overlay{left: 0}
+        }
+    }
+
+
+//OoCSS Methods Application
+.no-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important ;
+}
+.no-margin {
+    margin: 2px 0 !important ; 
+}
+.input-control {
+    @include own-control();
+}
+
+
+
+
+%head-with-describe {
+    @include head-control(true);
+}
+%common-head {
+    @include head-control(false);
+}
+%pull-left {
+    float: left !important ; 
+}
+%pull-right {
+    float: right !important ; 
+}
+%text-center {
+    text-align: center ;
+}
+%placeholder {    //PlaceHolders Style 
+    ::-webkit-input-placeholder {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white;
+    }
+    ::-moz-placeholder {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white;
+    }
+    :-ms-input-placeholder {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+%a-reset {
+    text-decoration: none ;
+}
+%button-reset{
+    background: transparent ;
+    border: none ;
+}
+%tag-filter {
+    @include small-font(black);
+    @include transition (all 0.3s linear);
+    padding: 8px ; 
+    background: $cold-gray ;
+    margin: 2px 2px ;
+    &:hover {opacity: 0.8 ; cursor: pointer; @include box-shadow(1px 1px 5px $light-gray)}
+    &.active {
+        background: $red ;
+        color: $white ;
+    }
+}
+%root-con {
+//    z-index: -1 ;
+    margin: 0 ;
+	min-height: 180px ; 
+    background: {
+    image : url('http://res.cloudinary.com/dpjzbs1ue/image/upload/v1489369120/students_sol91y.jpg');
+    repeat: no-repeat ; 
+    position : center center ;
+    attachment: fixed ;
+} 
+    @include background-size(cover);
+    position: relative ;
+    //OverLay Div 
+    .overlay {@include overlay(fade-out($black ,0.2))}
+    
+    h3{
+        @include h3($white , uppercase , 1.8);
+        margin-top: 110px ;
+        @include respond(xs,md){margin-top:100px}
+    }
+    .rule {
+	   @include rule(50px , 5px , $green);
+        margin-left: 1% ;
+    }
+    
+    ul {
+        position: absolute ; 
+        right: 10% ; 
+        bottom: 0 ;
+        background: $white ;
+        margin: 0 ;
+        padding: 10px ;
+        @include border-top-radius(2px);
+        @include respond(xs,sm){right: 2%}
+        li {
+            &:nth-child(odd){
+            padding: 0 ;
+            a{ @include xs-small-font($black);}
+            }
+            &:nth-child(even){color: $gray}
+            &:last-child a{color: $red}
+        }
+    }
+}
+%page-intro{
+    @include custom(fade-out($black , 0.2), capitalize , 1.1px , 1.2  , $medium , 4.4) ;
+    @include respond(xs,md){margin: 10px 0 15px}
+    margin-top: 50px ;
+}
+%static_container_for_data {
+    //Styling The Main Con
+    .figures-con {height: auto ;margin-top: 50px}
+    //Upper Paganation
+    .pagenaiton-counter {
+            padding-left: 15px ;
+            @include xs-small-font ($dim-blue);
+            .current-page , .result-number {color: $red}
+            .rule {@include rule(100% , 1px , $light-gray) ; margin-left: 0.2%}
+            .btn-group button{
+                @extend %button-reset ;
+                &:first-child {color: $red}
+            }
+        }
+    //lower npagenation slider 
+    .pagenaiton-slider {
+        text-align: center ;
+        .rule{@include rule(100% , 1px ,$light-gray )}
+        li {
+                height: 35px ;
+                width : 35px ;
+                text-align: center ;
+                line-height: 35px;
+                background: $gray ;
+                margin: 5px ;
+                @include border-radius(50%);
+                @include transition(all .3s linear);
+                i,span {
+                    display: inline-block ;
+                    color: $white ; 
+                    margin: auto ;
+                }
+                &.active{background: $red}
+                &:hover {background: $green ; cursor: pointer}
+            }
+        ul {display: inline-block}
+        }
+    
+}
+%detailed-list {
+     margin: 40px auto;
+     height: auto;
+        //Common Style For show-case Header
+        %header {
+            margin-bottom: 25px ;
+            h4 {@include h4($red,capitalize,1,$medium)}
+            .rule {@include rule(90%,1px,$light-gray);}
+        }
+}
+
+
+
+
+

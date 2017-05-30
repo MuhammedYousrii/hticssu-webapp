@@ -1,0 +1,388 @@
+@mixin dashboard-label($agentWidth){
+      padding: 4px 8px ;
+      display: block;
+      background: $dim-blue ;
+      @include small-font($white);
+        border-top-right-radius: 2px ; 
+      width: $agentWidth ;
+}
+@mixin dashboard-popup($backgroundColor){
+    display: block ;
+    padding: 10px 15px ;
+    background: $backgroundColor ;
+    @include border-radius(5px);
+    min-height: 500px ;
+    width: 600px ;
+    margin: 100px auto 0;
+    z-index: inherit ;
+}
+@mixin dashboard-modal($opacity-level , $backgroundColor){
+    position: fixed ; 
+    top: 50% ; left: 50% ; 
+    height: 100vh ;
+    width: 100vw ;
+    @include transform(translateX(-50%) translateY(-50%));
+    opacity: $opacity-level;
+    background: $backgroundColor ;
+}
+
+
+// Common Classes In Dashboard Area On OOcss Method
+.block-header {
+            text-align: center ;
+            h2 {
+                @include h2($dim-blue , capitalize , 1);
+                &:first-letter {@include h1($green , uppercase , 1)}
+                
+            }
+            p {@include small-font($dim-blue )}
+            .rule {@include rule(50px , 3px , $green)}
+        }
+.normal-label {
+        @include dashboard-label(30%); 
+    }
+.lg-label {
+        @include dashboard-label(70%);
+    }
+
+
+
+body#dashboard {
+    background: $cold-gray ;
+    line-height: 1.47 ;
+    font-family: $text-font ;
+    
+    
+    
+    header {
+        h1{@include h1($dim-blue , uppercase , 1)}
+        .rule {@include rule(80px , 5px , $green)}
+    }
+    .form-group {
+        padding : 10px 15px ;
+        margin: 5px ;
+        
+    }
+    
+    
+    .pre {
+	   background: $cold-gray ;
+    }
+    
+    .extrnal , .form-control {display: inline-block}
+    .form-control {
+        border-bottom: 2px solid $light-gray ;
+    }
+    .text-box {
+	   background: $white ; 
+        padding: 10px 15px ; 
+        border: 1px solid fade-out($dim-blue , 0.7);
+        width: 60% ;
+        min-height: 150px ;
+        white-space: pre-wrap ;
+        .show-tab{
+            display: inline-block ;
+            margin: 4px 2px ;
+            padding: 6px 4px ;
+            height: auto ;
+            color: $cold-gray ;
+            border: 1px solid $dim-blue ;
+            @include border-radius(4px);
+        }
+        .bold {
+            font-weight: $ex-bold ;
+        }
+    }
+    
+    
+    input[type="submit"]{
+        margin: 2px ;
+        @include border-radius(2px);
+    }
+    
+    
+    .block {
+        margin: 15px ;
+        @include box-shadow(0px 8px 12px $gray);
+        
+    }
+    
+    .type-control {
+        $shadow-color : fade-out($black , 0.6);
+        padding: 8px auto ;
+        background: $gray ;
+        @include box-shadow(1px 1px 3px $shadow-color inset , -1px -1px 3px $shadow-color inset);
+        @include border-radius(2px);
+        button {
+            margin: 2px 0 ;
+            display: inline-flex ;
+            i{
+                margin : auto
+            }
+        }
+    }
+    
+    .length {
+        display: inline-block ;
+        background: $dim-blue ;
+        padding: 4px 8px ;
+        @include xs-small-font($white);
+    }
+    
+    
+    #dash-navbar {
+        padding: 0 auto ;
+        background: $dim-blue ;
+        height: 30px ;
+        li {
+            margin: 0 ;
+            @include xs-small-font($white);
+            cursor: pointer ;
+            &.active {
+                background : $gray ; 
+                @include small-font($black);
+                border-top: 2px solid $dim-blue ;
+                border-bottom: 1px solid $gray ;
+                height: 99% ;
+                padding: 4px 6px ;
+                border-bottom-right-radius: 6px ;
+            }
+        }
+    }
+    
+    .user-assistant {
+        $assistant-color : fade-out(#31B0D5 , 0.3);
+        position: relative ;
+        background: $assistant-color ;
+        @include small-font($white);
+        min-height: 1px ; 
+        padding: 8px 6px ;
+        margin: 0 0 25px 20px ;
+        border: 1px solid $cold-gray ;
+        @include border-radius(5px);
+        float: right ;
+        width: 350px ;
+        word-wrap: break-word ;
+        @include transition(all 0.3s ease-in-out);
+        &::after {
+            content: '' ;
+            position: absolute ;
+            bottom: -20px ;
+            left: 20px ; 
+            height: 0 ; width: 0 ;
+            border: {
+                style : solid ;
+                color: $assistant-color transparent ;
+                width: 20px 15px 0 8px ;
+            }
+        }
+        &.active{
+            @include box-shadow(2px 2px 7px $assistant-color);
+        }
+    }
+    
+    
+    
+    .common-category li {
+	   padding: 8px 6px ;
+       @include xs-small-font($white);
+       background: $green ; 
+       margin: 2px 3px ;
+       border: 1px solid $green ;
+       @include border-radius(3px);
+       cursor: pointer ;
+       @include transition(all 0.3s ease);
+        &:hover {
+            @include box-shadow(1px 1px 4px $green);
+            opacity: 0.8 ;
+        }
+    }
+    
+    
+    #admin-profile {
+        position: fixed ;
+        left: -15% ; 
+        top: 0%; 
+        height: 100vh ;
+        width: 15% ;
+        background : $black ;
+        z-index: 9999 ;
+        @include transition(all 0.3s ease);
+        &.active {
+            left: 0% ;
+            opacity: 1 ;
+        }
+        
+        .toggle-dashboard-aside {
+            position: absolute ;
+            display: flex ;
+            right: -30px ;
+            top: 0px ;
+            padding: 10px ;
+            background: $black ;
+            border: 1px solid $black ;
+            i {
+                margin: auto ;
+                color :$white ;    
+            }
+        }
+        
+        .admin-case {
+            margin: 20px auto ;
+            img {
+                @include control-img(80px);
+                width: 80px ; 
+                margin: 10px auto ;
+            }
+            figcaption{
+                span {@include small-font($white)}
+                i {color : $green}
+            }
+	
+        }
+        
+        .admin-info {
+            p {@include small-font($red)}
+        }
+
+    }
+    
+    
+    .align-default {
+        position: relative ;
+        display: block ;
+        width: 80%;
+        margin: 5px auto ;
+    }
+    
+    .text-editor {
+        min-height: 200px ;
+        background: $white ;
+        padding: 14px 12px ;
+        border: 1px solid fade-out($black , 0.8);
+        @include border-radius(4px);
+        @include xs-small-font($black);
+        resize: vertical ;
+    }
+    
+    .binaky-btn {
+        background: $dim-blue ;
+        border: 1px solid $dim-blue;
+        padding: 5px ;
+        height: 30px ;
+        width: 30px ;
+        margin: 1px ;
+        display: inline-flex;
+        @include border-radius(2px);
+        @include transition(all 0.3s ease);
+        i {color : $white ; margin: auto}
+        
+        &:hover {
+            @include box-shadow(1.5px 1.5px 4px $white , -1.5px -1.5px 4px $white);
+            opacity: 0.9 ;
+            cursor: pointer ;
+        }
+        &.active {
+            background: $red ;
+            border-color: $red ;
+        }
+    }
+    
+    .bianky-toolbar{
+        background: $black ;
+        text-align: center ;
+        border: 1px solid $black ;
+        @include border-radius(5px);
+        padding: 2px ;
+        &::before {
+            content: '';
+            position: absolute ;
+            top: -15px ; 
+            left: 49% ; 
+            height: 0 ;width: 0 ;
+            border : {
+                style : solid ;
+                color: $black transparent ;
+                width: 0 15px 15px ;
+            }
+        }
+    }
+    
+    .bianky-list {
+        display: inline-block ;
+        margin: 2px 8px ; 
+        @include box-shadow(1px 1px 5px fade-out($cold-gray , 0.5) , -1px -1px 5px fade-out($cold-gray , 0.5));
+    }
+    
+    .bianky-select-list {
+        display: inline-block ;
+        border: 1px solid $cold-gray;
+        width: 120px;
+        @include border-radius(2px);
+        overflow: hidden;
+        background: #fff url("") no-repeat 90% 50%;
+        margin-top: 3px ;
+        select {
+            padding: 5px 8px;
+            width: 130%;
+            border: none;
+            @include box-shadow(non);
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            &:focuse {outline: none}
+        }
+    }
+}
+
+
+
+
+
+.bianky-modal {
+        @include dashboard-modal (0 , fade-out($black , 0.3));
+        z-index: -1 ;
+        @include transition(all 0.3s linear);
+        &.active {opacity: 1 ; z-index: 1}
+        
+        .close {
+            background: $black ;
+            padding: 5px ;
+            margin: 50px auto ;
+            display: inline-flex ;
+            i{margin: auto ; color: $white}
+            @include border-radius(50%);
+        }
+        .bianky-popup {
+            @include dashboard-popup($cold-gray);
+            .form-group {
+                margin: 10px auto ;
+                label {@include dashboard-label(40%)}
+            }
+            .btn-group {
+	           margin-top: 30px ;
+            }
+          
+    }
+}
+.admin-login-modal {
+    @include dashboard-modal(1 , $green);
+    z-index: 9999 ;
+   
+        .admin-login-popup {
+            @include dashboard-popup($white);
+        }
+        
+        #login-form {
+            background: $white ;
+            padding: 10px 15px ;
+        }
+    }
+
+
+  
+
+
+
+
+

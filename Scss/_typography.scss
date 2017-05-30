@@ -1,0 +1,238 @@
+@mixin h1 ($color , $transform , $scale){
+    $se-size : percentage(2);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scaleY($scale));
+    font: {
+        family :$text-font ;
+        size : $se-size ;
+        weight : $ex-bold ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1}
+    @include respond(md,lg){font-size: $se-size  * 0.9}
+    @include respond(sm,md){font-size: $se-size  * 0.8}
+    @include respond(xs,sm){font-size: $se-size  * 0.7}
+}
+
+
+@mixin h2 ($color , $transform , $scale){
+    $se-size : percentage(1.7);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scaleY($scale));
+    font: {
+        size : $se-size ;
+        weight : $bold ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.1}
+    @include respond(md,lg){font-size: $se-size  * 1}
+    @include respond(sm,md){font-size: $se-size  * 0.9}
+    @include respond(xs,sm){font-size: $se-size  * 0.9}
+}
+
+
+@mixin h3 ($color , $transform , $scale){
+    $se-size : percentage(1.4);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scaleY($scale));
+    font: {
+        size : $se-size ;
+        weight : $semi-bold ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1}
+    @include respond(sm,md){font-size: $se-size  * 0.9}
+    @include respond(xs,sm){font-size: $se-size  * 0.8}
+}
+
+
+@mixin h4 ($color , $transform , $scale , $weight){
+    $se-size : percentage(1.1);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scale($scale));
+    font: {
+        size : $se-size ;
+        weight : $weight ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1.1}
+    @include respond(sm,md){font-size: $se-size  * 1}
+    @include respond(xs,sm){font-size: $se-size  * 1}
+}
+
+
+@mixin h5 ($color , $transform , $scale , $weight){
+    $se-size : percentage(0.9);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scale($scale));
+    font: {
+        size : $se-size ;
+        weight : $weight ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1.1}
+    @include respond(sm,md){font-size: $se-size  * 1}
+    @include respond(xs,sm){font-size: $se-size  * 1}
+}
+
+
+@mixin h6 ($color , $transform , $scale , $weight){
+    $se-size : percentage(.6);
+    color: $color ;
+    text-transform: $transform ;
+    @include transform(scale($scale));
+    font: {
+        size : $se-size ;
+        weight : $weight ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1}
+    @include respond(sm,md){font-size: $se-size  * 0.9}
+    @include respond(xs,sm){font-size: $se-size  * 0.8}
+}
+
+
+@mixin custom($color , $transform , $letter , $scale , $weight , $size){
+    $se-size : percentage(0.2) *$size;
+    color: $color ;
+    transform: $transform ;
+    letter-spacing: $letter ;
+    @include transform(scaleY($scale));
+    font: {
+        size : $se-size ;
+        weight :$weight ; 
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1.1}
+    @include respond(sm,md){font-size: $se-size  * 1}
+    @include respond(xs,sm){font-size: $se-size  * 1}
+
+    
+    }
+
+@mixin small-font ($color){
+    $se-size : percentage(0.9);
+    color: $color ;
+    text-transform: capitalize ;
+    line-height: 1.47 ;
+    font: {
+        size : $se-size;
+        weight : $regular
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1.2}
+    @include respond(sm,md){font-size: $se-size  * 1.2 ; line-height: 1.57}
+    @include respond(xs,sm){font-size: $se-size  * 1 ; line-height: 1.57}
+
+}
+
+
+@mixin xs-small-font ($color){
+    $se-size : percentage(0.7);
+    color: $color ;
+    text-transform: capitalize ;
+    line-height: 1.4 ;
+    font: {
+        size : $se-size;
+        weight : $regular
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1.2}
+    @include respond(md,lg){font-size: $se-size  * 1.1}
+    @include respond(sm,md){font-size: $se-size  * 1}
+    @include respond(xs,sm){font-size: $se-size  * 1}
+
+}
+
+
+@mixin input-font ($color){
+    color: $color ;
+    font: {
+        size : 12px ; 
+        weight : $bold ;
+    }
+}
+
+%h2 {
+    color: $red ; 
+    text-transform: uppercase ;
+    @include transform(scale(1.2px));
+    font: {
+        weight : $bold ;
+        size : 32px ;
+        
+    }
+}
+
+%h3 { 
+    color: $dim-blue ;
+    text-transform: uppercase;
+    @include transform(scaleY(1.5));
+    font: {
+        weight : $medium ; 
+        size : 22px ; 
+    }
+}
+
+%h5 {
+    color: black ; 
+    transform: uppercase ;
+    @include transform(scale(1.2));
+    font: {
+        size : 16px ; 
+        weight : $medium ; 
+    }
+    
+}
+
+
+
+
+@mixin upper-nav() {
+    color: $gray ;
+    $se-size : percentage(0.8);
+    text-transform: capitalize;
+    @include transform(scaleY(1.2));
+    font: {
+        size : $se-size ;
+        weight : $regular ;
+    }
+    @include respond(lg,xl){font-size: $se-size  * 1}
+    @include respond(md,lg){font-size: $se-size  * 1}
+    @include respond(sm,md){font-size: $se-size  * 0.8}
+    @include respond(xs,sm){font-size: $se-size  * 0.8}
+}
+
+%head-title {
+    color: $gray ; 
+    text-transform: capitalize ;
+    @include transform(scale(1.2px));
+    font: {
+        weight : $medium ; 
+        size :  17px ; 
+    }
+}
+
+%normal-text {
+    color: $gray ; 
+    text-transform: capitalize ;
+    @include transform (scale(1.2px));
+    font: {
+        weight : $regular ;
+        size : 14px ; 
+    }
+}
+
+%label-font {
+    color: $white ;
+    text-transform: uppercase ;
+    margin-left: 2% ; 
+    font: {
+        size : 12px ;
+        weight : $bold ;
+    }
+}
+
+

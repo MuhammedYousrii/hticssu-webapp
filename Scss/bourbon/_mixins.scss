@@ -1,0 +1,124 @@
+// Create All Css3 Properites With it Prefix 
+@mixin border-radius ($value ){
+    -webkit-border-radius : $value ;
+    -moz-border-radius : $value ;
+    -ms-border-radius : $value ;
+    -o-border-radius : $value ;
+    border-radius: $value ;
+}
+@mixin filter ($filter-value){
+    -webkit-filter: $filter-value ;
+    -moz-filter: $filter-value ;
+    -ms-filter: $filter-value ;
+    -o-filter: $filter-value ;
+    filter: $filter-value ;
+}
+@mixin box-shadow($shadows...) {
+    box-shadow: $shadows ;
+    -webkit-box-shadow : $shadows ;
+    -moz-box-shadow : $shadows ;
+    -ms-box-shadow : $shadows ;
+}
+@mixin background-size ($bool){
+    -webkit-background-size: $bool ;
+    -moz-background-size: $bool ;
+    -ms-background-size: $bool ;
+    -o-background-size: $bool ;
+    background-size: $bool ;
+}
+@mixin transition ($value1 , $value2 , $value3){
+    -webkit-transition: $value1 , $value2 , $value3 ;
+    -moz-transition: $value1 , $value2 , $value3 ;
+    -ms-transition: $value1 , $value2 , $value3 ;
+    -o-transition: $value1 , $value2 , $value3 ;
+    transition: $value1 , $value2 , $value3 ;
+}
+@mixin box-sizing ($border){
+    -webkit-box-sizing: $border ;
+    -moz-box-sizing: $border ;
+    -ms-box-sizing: $border ;
+    -o-box-sizing: $border ;
+    box-sizing: $border ;
+}
+@mixin column-count ($number){
+    -webkit-column-count: $number ;
+    -moz-column-count: $number ;
+    -ms-column-count: $number ;
+    -o-column-count: $number ;
+    column-count: $number ;
+}
+@mixin column-gap ($width){
+    -webkit-column-gap: $width ;
+    -moz-column-gap: $width ;
+    -ms-column-gap: $width ;
+    -o-column-gap: $width ;
+    column-gap: $width ;
+}
+
+@mixin transition ($value : all , $time : .4s , $way : ease-in-out){
+    -webkit-transition: $value , $time , $way ;
+    -moz-transition: $value , $time , $way ;
+    -ms-transition: $value , $time , $way ;
+    -o-transition: $value , $time , $way ;
+    transition: $value , $time , $way ;
+}
+
+@mixin curve ($color1,$color2){
+            position: absolute ;
+            height: 0px ; 
+            width: 0px ;
+            border: {style : solid ; width : 100px 1350px 0px 0px; color : $color1 $color2}
+        }//End curve
+@mixin background-blend-mode ($value){
+    -webkit-background-blend-mode: $value ; 
+    -moz-background-blend-mode: $value ; 
+    -ms-background-blend-mode: $value ; 
+    -o-background-blend-mode: $value ; 
+    background-blend-mode: $value ; 
+}
+
+
+@mixin column-count ($number){
+    -webkit-column-count: $number ;
+    -moz-column-count: $number ;
+    -ms-column-count: $number ;
+    -o-column-count: $number ;
+    column-count: $number ;
+}
+@mixin column-gap ($width){
+    -webkit-column-gap: $width ;
+    -moz-column-gap: $width ;
+    -ms-column-gap: $width ;
+    -o-column-gap: $width ;
+    column-gap: $width ;
+}
+// Create All Css3 Properites With it Prefix 
+
+@mixin filter ($filter-value){
+    -webkit-filter: $filter-value ;
+    -moz-filter: $filter-value ;
+    -ms-filter: $filter-value ;
+    -o-filter: $filter-value ;
+    filter: $filter-value ;
+}
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin no-padding($side) {
+    @if $side == 'all' {
+        .no-padding {
+            padding: 0 !important;
+        }
+    } @else {
+        .no-padding-#{$side} {
+            padding-#{$side}: 0 !important;
+        }
+    }
+}
+
+//Mixin For Gloabal ul styled 

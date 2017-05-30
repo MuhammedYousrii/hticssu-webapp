@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="" id="meta-describe">
+        <meta name="application-name" content="htisccu.com">
+        <meta name="keywords" content='Hti,Student,Union,ComputerScience,Courses,Matrial,Events,instuite' id="meta-keyword">
+        <meta name="author" content="New Start Developers">
+        <meta property="og:title" content="" id="meta-title">
+        <meta property="og-url" content="" id="meta-url">
+        <title>Course_Detail Hti-Cs Student-Union</title>
+        <link rel="icon" href="media/logofinal.png">
+        <!-- For Erialer IE versions -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" media="all">
+        <link rel="stylesheet" href="Css/jRating.jquery.css" media="all">
+        <link rel="stylesheet" href="Css/hover.css" media="all">
+        <link rel="stylesheet" href="Css/home.css" media="screen">
+    </head>
+    <body id="course-detail-page">
+        
+        <div id="loader" class="overlay-loader">
+		  <div class="loader-background color-flip"></div>
+		  <img class="loader-icon spinning-cog" src="media/cog06.svg" alt="Spinner-image-for-load-screen">
+            <h2>Loading ...</h2>
+	   </div> 
+        
+        <header class="root-header">
+           <!--The upper Static nav-->
+            <nav id="upper-nav">
+                <div class="container">
+                    
+                    <!--Text Data contact To our Community-->
+                    <ul id="contact-data" class="col-md-7 col-xs-12 list-unstyled text-uppercase" data-step="1" data-intro="ok This is" data-position="bottom">
+                        <li class="hidden-xs">
+                            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                        <span>The M Bulding Next to Small El 10 PoliceStation </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                            <span>01158737518</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
+                            <span>hti.su.cs@gmail.com</span>
+                        </li>
+                </ul>
+                    
+                    <!--Our Social Media Links For Contact-->
+                    <ul id="social-media-links" class="list-inline col-md-5 col-xs-12">
+                        <li><a href="https://www.facebook.com/profile.php?id=100013092248523&fref=ts"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/hti_cs"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                        <li><a><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li> 
+                    </ul>
+                </div>
+            </nav> 
+    
+            
+            
+            <!--The Lower Dynamic Navbar (it's dynamic in active bar)-->
+            <nav class="navbar navbar-default">
+                <div class="container">
+            
+                    <!-- Brand and toggle button get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed btn btn-primary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="media/logofinal.png" class="img-responsive" alt="website-brand"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right text-capitalize">
+                            <li><a href="/" class="hvr-bounce-to-top">Home</a></li>
+                            <li><a href="aboutUs.html" class="hvr-bounce-to-top" >About Us</a></li>
+                            <li class="disabled" role="presentation"><a data-toggle="tooltip" data-placement="bottom" title="Still Under Development" href="#" class="hvr-bounce-to-top" >our team</a></li>                            
+                            <li class="active"><a href="courses.html" class="hvr-bounce-to-top" >courses<span class="sr-only">(current)</span></a></li>
+                            
+                            <!--DropDown List-item For Display all pages of website -->
+                            <li class="dropdown">
+                                <!--This item Data-->
+                                <a href="#" class="dropdown-toggle hvr-bounce-to-top" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages  <span class="caret"></span></a>
+                                
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="events.html" class="hvr-bounce-to-top">our Events</a></li>
+                                    <li><a href="blogs.html" class="hvr-bounce-to-top">Our Blogs</a></li>
+                                    <li><a href="news.html" class="hvr-bounce-to-top">our News</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="material.html" class="hvr-bounce-to-top">online HTI-material </a></li>
+                                </ul>
+                            
+                            
+                            </li><!--End Of DropDown List-items -->
+                            
+                            <li><a href="contactUs.html" class="hvr-bounce-to-top">Contact Us</span></a></li>
+                            
+                            <li><button class="btn btn-danger hidden-xs"  data-toggle="tooltip" data-placement="right" title="still Under Development">Rate WebSite</button></li>
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+               
+                </div><!-- /.container -->
+            </nav> 
+        
+        
+            <!--The photo of Page With Root -->
+            <section class="root-con">
+                <div class="overlay">
+                    <div class="container">
+                        <header>
+                            <h3>Course Detailed</h3>
+                            <span class="rule"></span>
+                        </header>
+                        <ul class="list-inline text-capitalize">
+                            <li><a href="/">home</a></li>
+                            <li><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+                            <li><a href="courses.html">courses</a></li>
+                            <li><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+                            <li><a href="course-detailed.html">Detailed</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
+        </header>
+        
+        
+        <!--Course In Details-->
+        <section id="course-detail-con" class="detailed-con">
+            <div class="container">
+                <div class="row">
+                    <section class="col-md-9 col-xs-12 detailed-list">
+                        
+                        
+                        <div class="row content"></div>    
+                        
+                        
+                         
+                        
+                        
+                    </section>
+                    
+                    
+                    <!-- Right Sidebar For events and blogs suggest by us -->
+                    <aside class="col-md-3 col-xs-12 aside-detail-related-event">
+                        
+                        <section class="course-detailed">
+                            <header>
+                                <h4> Deeb Menu  </h4>
+                                <span class="rule"></span>
+                            </header>
+                            <ul class="detail-menu list-unstyled"></ul>
+                        </section>
+                        <section class="recent hidden-xs makeGap">
+                            <header class="text-left center-block">
+                                <h4>Recent event</h4>
+                                <span class="rule"></span>
+                            </header>
+                            <ul class="list-unstyled">
+                                                  
+                            </ul>
+                            <a class="btn all" href="events.html">see all</a>
+                        </section>
+                        <section class="related-courses hidden-xs">
+                            <header>
+                                <h4>Related Courses</h4>
+                                <span class="rule"></span>
+                            </header>
+                            <ul class="list-unstyled"></ul>
+                        </section>
+                    </aside>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+        </footer>
+        
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-             2Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/1c51655d76.js"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="js/staticPieces.js"></script>
+        <script src="js/preventAccess.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/coursesModule.js"></script>
+        <script src="js/sidebarModule.js"></script>
+        <script>
+            $(function(){
+                //fire nice scroll
+               $("body").niceScroll({
+                   cursorcolor:"#002e3b" ,
+                   cursorwidth : '10px',
+                   cursorborder : '2px solid #002e3b' ,
+                   cursorborderradius : '1px',
+                   horizrailenabled: false 
+               }); 
+            })
+        </script>
+    </body>
+</html>
+
+
